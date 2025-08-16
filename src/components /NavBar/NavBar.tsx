@@ -36,13 +36,13 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
     } else if (isHovered) {
       color =
         colorScheme === 'dark'
-          ? theme.other.colors.hoverTextDark
-          : theme.other.colors.hoverTextLight;
+          ? theme.other.colors.dark.hoverText
+          : theme.other.colors.light.hoverText;
     } else {
       color =
         colorScheme === 'dark'
-          ? theme.other.colors.inactiveTextDark
-          : theme.other.colors.inactiveTextLight;
+          ? theme.other.colors.dark.inactiveText
+          : theme.other.colors.light.inactiveText;
     }
 
     return (
@@ -92,8 +92,8 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
             style={{ marginRight: '8vw' }}
             color={
               colorScheme === 'dark'
-                ? theme.other.colors.inactiveTextDark
-                : theme.other.colors.drawerTextLight
+                ? theme.other.colors.dark.inactiveText
+                : theme.other.colors.light.drawerText
             }
           />
         </Group>
@@ -110,23 +110,23 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
         styles={{
           content: {
             backgroundColor:
-              colorScheme === 'dark' ? theme.other.colors.navBgDark : undefined,
+              colorScheme === 'dark' ? theme.other.colors.dark.navBg : undefined,
           },
           header: {
             backgroundColor:
-              colorScheme === 'dark' ? theme.other.colors.navBgDark : undefined,
+              colorScheme === 'dark' ? theme.other.colors.dark.navBg : undefined,
           },
           title: {
             color:
               colorScheme === 'dark'
-                ? theme.other.colors.inactiveTextDark
-                : theme.other.colors.drawerTextLight,
+                ? theme.other.colors.dark.inactiveText
+                : theme.other.colors.light.drawerText,
           },
           close: {
             color:
               colorScheme === 'dark'
-                ? theme.other.colors.inactiveTextDark
-                : theme.other.colors.drawerTextLight,
+                ? theme.other.colors.dark.inactiveText
+                : theme.other.colors.light.drawerText,
           },
         }}
       >

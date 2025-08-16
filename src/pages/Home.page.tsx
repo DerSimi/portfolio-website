@@ -37,8 +37,8 @@ export function HomePage() {
       <Box
         bg={
           colorScheme === "dark"
-            ? theme.other.colors.contentBgDark
-            : theme.other.colors.contentBgLight
+            ? theme.other.colors.dark.contentBg
+            : theme.other.colors.light.contentBg
         }
         style={{
           minHeight: "calc(100vh - 60px)",
