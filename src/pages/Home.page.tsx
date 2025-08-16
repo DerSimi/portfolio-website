@@ -41,12 +41,15 @@ export function HomePage() {
             : theme.other.colors.light.contentBg
         }
         style={{
-          minHeight: "calc(100vh - 60px)",
-          paddingTop: "8vh",
+          minHeight: "100vh",
+          paddingTop: "60px", // Abstand für die fixe Navbar
           paddingLeft: "calc(12vw + var(--mantine-spacing-md))",
         }}
       >
-        {contentMap[activeLink]}
+        {/* Optional: Innenabstand für Content */}
+        <div style={{ paddingTop: "8vh" }}>
+          {contentMap[activeLink]}
+        </div>
       </Box>
     </>
   );
