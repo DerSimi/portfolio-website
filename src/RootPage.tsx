@@ -2,12 +2,13 @@ import { useState, ReactElement } from "react";
 import { Box, useMantineColorScheme, useMantineTheme } from "@mantine/core";
 import { NavBar } from "@/components /NavBar/NavBar";
 import { Home } from "@/pages/Home";
+import { CV } from "./pages/CV";
 
 // You can move these into their own files in a 'views' or 'sections' folder later
-const HomeContent = () => <div><Home/></div>;
+const HomeContent = () => <Home />;
 const ProjectsContent = () => <div>Projects Page Content</div>;
 const PublicationsContent = () => <div>Publications Page Content</div>;
-const CVContent = () => <div>CV Page Content</div>;
+const CVContent = () => <CV/>;
 
 const contentMap: Record<string, ReactElement> = {
   Home: <HomeContent />,
@@ -44,7 +45,7 @@ export function RootPage() {
         style={{
           minHeight: "100vh",
           paddingTop: "60px", // Abstand für die fixe Navbar
-          paddingLeft: "calc(6vw + var(--mantine-spacing-md))",
+          paddingLeft: "calc(5vw + var(--mantine-spacing-md))",
         }}
       >
         {/* Optional: Innenabstand für Content */}

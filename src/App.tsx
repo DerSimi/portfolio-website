@@ -5,7 +5,12 @@ import { RootPage } from './RootPage';
 
 export default function App() {
   return (
-    <MantineProvider theme={theme}>
+    <MantineProvider
+      theme={{
+        ...theme,
+        fontFamily: 'Inter, sans-serif',
+      }}
+    >
       <RootPage />
     </MantineProvider>
   );
