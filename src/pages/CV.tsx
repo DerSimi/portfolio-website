@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Group, Stack, Text, Title, useMantineColorScheme, useMantineTheme } from '@mantine/core';
+import { Box, Divider, Group, Stack, Text, Title, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 
 // Die Daten-Arrays bleiben unverändert
 const educationData = [
@@ -35,7 +35,7 @@ const skillsData = [
 
 // Die Helper-Komponenten bleiben unverändert
 function SectionDivider({ color }: { color: string }) {
-  return <Divider style={{ width: '90%' }} color={color} />;
+  return <Divider style={{ width: 'calc(100% - 8vw - 22px)', marginRight: 'calc(8vw + 22px)' }} color={color} />;
 }
 
 function CvEntry({
@@ -50,25 +50,21 @@ function CvEntry({
   textColor: string;
 }) {
   return (
-    <Grid>
-      <Grid.Col span="auto">
-        <Text c={textColor}>
-          <Text component="span" fw={700} c={textColor}>
-            {primary}
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: 'calc(100% - 8vw - 22px)', marginRight: 'calc(8vw + 22px)' }}>
+      <Text c={textColor}>
+        <Text component="span" fw={700} c={textColor}>
+          {primary}
+        </Text>
+        {secondary && (
+          <Text component="span" c={textColor}>
+            , {secondary}
           </Text>
-          {secondary && (
-            <Text component="span" c={textColor}>
-              , {secondary}
-            </Text>
-          )}
-        </Text>
-      </Grid.Col>
-      <Grid.Col span="content" style={{ marginRight: '9.5vw' }}>
-        <Text size="sm" c={textColor}>
-          {date}
-        </Text>
-      </Grid.Col>
-    </Grid>
+        )}
+      </Text>
+      <Text size="sm" c={textColor}>
+        {date}
+      </Text>
+    </div>
   );
 }
 
