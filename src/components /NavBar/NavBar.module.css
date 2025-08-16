@@ -2,7 +2,6 @@
   height: 60px;
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
-  background-color: light-dark(var(--mantine-color-white), #2d3748);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -20,36 +19,18 @@
     height: 42px;
     width: 100%;
   }
-
-  @mixin hover {
-    background-color: transparent;
-  }
 }
 
 .subLink {
   width: 100%;
   padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
   border-radius: var(--mantine-radius-md);
-
-  @mixin hover {
-    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-7));
-  }
 }
 
 .dropdownFooter {
-  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-7));
   margin: calc(var(--mantine-spacing-md) * -1);
   margin-top: var(--mantine-spacing-sm);
   padding: var(--mantine-spacing-md) calc(var(--mantine-spacing-md) * 2);
   padding-bottom: var(--mantine-spacing-xl);
   border-top: 1px solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
-}
-
-.themeToggle {
-  color: light-dark(#656168, #a0aec0);
-
-  @mixin hover {
-    color: light-dark(#111827, #e2e8f0);
-    background-color: transparent;
-  }
 }

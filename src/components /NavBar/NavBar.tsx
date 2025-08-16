@@ -25,6 +25,7 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const theme = useMantineTheme();
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [iconHovered, setIconHovered] = useState(false);
 
   const items = links.map((link) => {
     const isActive = activeLink === link.label;
@@ -41,8 +42,8 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
     } else {
       color =
         colorScheme === 'dark'
-          ? theme.other.colors.dark.inactiveText
-          : theme.other.colors.light.inactiveText;
+          ? theme.other.colors.dark.normalText
+          : theme.other.colors.light.normalText;
     }
 
     return (
@@ -66,7 +67,15 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
 
   return (
     <Box>
-      <header className={classes.header}>
+      <header
+        className={classes.header}
+        style={{
+          backgroundColor:
+            colorScheme === 'dark'
+              ? theme.other.colors.dark.navBg
+              : theme.other.colors.light.navBg,
+        }}
+      >
         <Group justify="space-between" h="100%">
           <Group h="100%" gap={0} visibleFrom="sm" style={{ marginLeft: '8vw' }}>
             {items}
@@ -78,9 +87,27 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
               variant="transparent"
               size="lg"
               aria-label="Toggle color scheme"
-              className={classes.themeToggle}
+              onMouseEnter={() => setIconHovered(true)}
+              onMouseLeave={() => setIconHovered(false)}
             >
-              {colorScheme === 'dark' ? <IconSunFilled /> : <IconMoonFilled size={18} />}
+              {colorScheme === 'dark' ? (
+                <IconSunFilled
+                  color={
+                    iconHovered
+                      ? theme.other.colors.dark.hoverText
+                      : theme.other.colors.dark.normalText
+                  }
+                />
+              ) : (
+                <IconMoonFilled
+                  size={18}
+                  color={
+                    iconHovered
+                      ? theme.other.colors.light.hoverText
+                      : theme.other.colors.light.normalText
+                  }
+                />
+              )}
             </ActionIcon>
           </Group>
 
@@ -92,7 +119,7 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
             style={{ marginRight: '8vw' }}
             color={
               colorScheme === 'dark'
-                ? theme.other.colors.dark.inactiveText
+                ? theme.other.colors.dark.normalText
                 : theme.other.colors.light.drawerText
             }
           />
@@ -119,13 +146,13 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
           title: {
             color:
               colorScheme === 'dark'
-                ? theme.other.colors.dark.inactiveText
+                ? theme.other.colors.dark.normalText
                 : theme.other.colors.light.drawerText,
           },
           close: {
             color:
               colorScheme === 'dark'
-                ? theme.other.colors.dark.inactiveText
+                ? theme.other.colors.dark.normalText
                 : theme.other.colors.light.drawerText,
           },
         }}
