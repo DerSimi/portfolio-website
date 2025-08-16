@@ -1,5 +1,5 @@
 import { useState, ReactElement } from "react";
-import { Box, useMantineColorScheme } from "@mantine/core";
+import { Box, useMantineColorScheme, useMantineTheme } from "@mantine/core";
 import { NavBar } from "@/components /NavBar/NavBar";
 
 // You can move these into their own files in a 'views' or 'sections' folder later
@@ -25,6 +25,7 @@ const navLinks = [
 export function HomePage() {
   const [activeLink, setActiveLink] = useState("Home");
   const { colorScheme } = useMantineColorScheme();
+  const theme = useMantineTheme();
 
   return (
     <>
@@ -34,7 +35,11 @@ export function HomePage() {
         setActiveLink={setActiveLink}
       />
       <Box
-        bg={colorScheme === "dark" ? "#1A202C" : "#F9FAFB"}
+        bg={
+          colorScheme === "dark"
+            ? theme.other.colors.contentBgDark
+            : theme.other.colors.contentBgLight
+        }
         style={{
           minHeight: "calc(100vh - 60px)",
           paddingTop: "8vh",

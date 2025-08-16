@@ -2,7 +2,7 @@
   height: 60px;
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
-  background-color: light-dark(var(--mantine-color-white), #2D3748);
+  background-color: light-dark(var(--mantine-color-white), #2d3748);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -13,7 +13,6 @@
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
   text-decoration: none;
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
   font-weight: 500;
   font-size: var(--mantine-font-size-sm);
 
@@ -23,7 +22,7 @@
   }
 
   @mixin hover {
-    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+    background-color: transparent;
   }
 }
 
@@ -47,10 +46,10 @@
 }
 
 .themeToggle {
-  color: light-dark(#656168, #A0AEC0);
+  color: light-dark(#656168, #a0aec0);
 
   @mixin hover {
-    color: #39D7C9;
+    color: light-dark(#111827, #e2e8f0);
     background-color: transparent;
   }
 }

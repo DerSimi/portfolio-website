@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import {
   ActionIcon,
   Box,
@@ -8,6 +8,7 @@ import {
   Group,
   ScrollArea,
   useMantineColorScheme,
+  useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconSunFilled, IconMoonFilled } from '@tabler/icons-react';
@@ -22,25 +23,46 @@ interface NavBarProps {
 export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const theme = useMantineTheme();
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
-  const items = links.map((link) => (
-    <a
-      key={link.label}
-      href={link.href}
-      className={classes.link}
-      style={{
-        color:
-          activeLink === link.label ? '#39D7C9' : colorScheme === 'dark' ? '#A0AEC0' : '#656168',
-      }}
-      onClick={(event) => {
-        event.preventDefault();
-        setActiveLink(link.label);
-        closeDrawer();
-      }}
-    >
-      {link.label}
-    </a>
-  ));
+  const items = links.map((link) => {
+    const isActive = activeLink === link.label;
+    const isHovered = hoveredLink === link.label;
+    let color;
+
+    if (isActive) {
+      color = theme.other.colors.accent;
+    } else if (isHovered) {
+      color =
+        colorScheme === 'dark'
+          ? theme.other.colors.hoverTextDark
+          : theme.other.colors.hoverTextLight;
+    } else {
+      color =
+        colorScheme === 'dark'
+          ? theme.other.colors.inactiveTextDark
+          : theme.other.colors.inactiveTextLight;
+    }
+
+    return (
+      <a
+        key={link.label}
+        href={link.href}
+        className={classes.link}
+        style={{ color }}
+        onClick={(event) => {
+          event.preventDefault();
+          setActiveLink(link.label);
+          closeDrawer();
+        }}
+        onMouseEnter={() => setHoveredLink(link.label)}
+        onMouseLeave={() => setHoveredLink(null)}
+      >
+        {link.label}
+      </a>
+    );
+  });
 
   return (
     <Box>
@@ -58,7 +80,7 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
               aria-label="Toggle color scheme"
               className={classes.themeToggle}
             >
-              {colorScheme === 'dark' ? <IconSunFilled  /> : <IconMoonFilled size={18} />}
+              {colorScheme === 'dark' ? <IconSunFilled /> : <IconMoonFilled size={18} />}
             </ActionIcon>
           </Group>
 
@@ -68,7 +90,11 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
             onClick={toggleDrawer}
             hiddenFrom="sm"
             style={{ marginRight: '8vw' }}
-            color={colorScheme === 'dark' ? '#A0AEC0' : '#6C686F'}
+            color={
+              colorScheme === 'dark'
+                ? theme.other.colors.inactiveTextDark
+                : theme.other.colors.drawerTextLight
+            }
           />
         </Group>
       </header>
@@ -83,16 +109,24 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
         zIndex={1000000}
         styles={{
           content: {
-            backgroundColor: colorScheme === 'dark' ? '#2D3748' : undefined,
+            backgroundColor:
+              colorScheme === 'dark' ? theme.other.colors.navBgDark : undefined,
           },
           header: {
-            backgroundColor: colorScheme === 'dark' ? '#2D3748' : undefined,
+            backgroundColor:
+              colorScheme === 'dark' ? theme.other.colors.navBgDark : undefined,
           },
           title: {
-            color: colorScheme === 'dark' ? '#A0AEC0' : '#6C686F',
+            color:
+              colorScheme === 'dark'
+                ? theme.other.colors.inactiveTextDark
+                : theme.other.colors.drawerTextLight,
           },
           close: {
-            color: colorScheme === 'dark' ? '#A0AEC0' : '#6C686F',
+            color:
+              colorScheme === 'dark'
+                ? theme.other.colors.inactiveTextDark
+                : theme.other.colors.drawerTextLight,
           },
         }}
       >

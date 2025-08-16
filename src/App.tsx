@@ -1,13 +1,13 @@
 import '@mantine/core/styles.css';
-
 import { MantineProvider } from '@mantine/core';
-import { Router } from './Router';
+import { HomePage } from './pages/Home.page';
 import { theme } from './theme';
 
 export default function App() {
   return (
     <MantineProvider theme={theme}>
-      <Router />
+      <HomePage />
     </MantineProvider>
   );
 }
+
