@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Box } from "@mantine/core";
-import { NavBar } from "@/components /NavBar";
+import { useState, ReactElement } from "react";
+import { Box, useMantineColorScheme } from "@mantine/core";
+import { NavBar } from "@/components /NavBar/NavBar";
 
 // You can move these into their own files in a 'views' or 'sections' folder later
 const HomeContent = () => <div>Home Page Content</div>;
@@ -8,7 +8,7 @@ const ProjectsContent = () => <div>Projects Page Content</div>;
 const PublicationsContent = () => <div>Publications Page Content</div>;
 const CVContent = () => <div>CV Page Content</div>;
 
-const contentMap = {
+const contentMap: Record<string, ReactElement> = {
   Home: <HomeContent />,
   Projects: <ProjectsContent />,
   Publications: <PublicationsContent />,
@@ -24,6 +24,7 @@ const navLinks = [
 
 export function HomePage() {
   const [activeLink, setActiveLink] = useState("Home");
+  const { colorScheme } = useMantineColorScheme();
 
   return (
     <>
@@ -32,7 +33,14 @@ export function HomePage() {
         activeLink={activeLink}
         setActiveLink={setActiveLink}
       />
-      <Box bg="#F9FAFB" style={{ minHeight: "calc(100vh - 60px)" }}>
+      <Box
+        bg={colorScheme === "dark" ? "#1A202C" : "#F9FAFB"}
+        style={{
+          minHeight: "calc(100vh - 60px)",
+          paddingTop: "8vh",
+          paddingLeft: "calc(12vw + var(--mantine-spacing-md))",
+        }}
+      >
         {contentMap[activeLink]}
       </Box>
     </>
