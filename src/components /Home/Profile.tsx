@@ -1,10 +1,6 @@
-import React from 'react';
-// Imports have been updated to use a CDN to resolve dependencies.
 import { Avatar, Text, Group, ActionIcon, Container, useMantineTheme, useMantineColorScheme, Tooltip } from '@mantine/core';
 import { IconMailFilled, IconBrandTwitterFilled, IconBrandGithubFilled, IconBrandGoogleFilled } from '@tabler/icons-react';
 
-// This is the main component for the user info card.
-// It's designed to be configurable through props.
 export function Profile({
     avatarInitials = 'WD',
     name = 'John Doe',
@@ -22,11 +18,8 @@ export function Profile({
 }) {
     const theme = useMantineTheme();
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-    const icon_color = colorScheme === 'dark' ? theme.other.colors.dark.normalText : theme.other.colors.light.normalText;
-
-    const accentColor = theme.other.colors.accent
-
-    console.log(accentColor);
+    
+    const iconColor = colorScheme === 'dark' ? theme.other.colors.dark.normalText : theme.other.colors.light.normalText;
 
     return (
         <Container
@@ -71,28 +64,28 @@ export function Profile({
                 {socialLinks.email && (
                     <Tooltip label="Email me" position="top" withArrow>
                         <ActionIcon component="a" href={socialLinks.email} size="lg" variant="transparent">
-                            <IconMailFilled size={30} color={icon_color} />
+                            <IconMailFilled size={30} color={iconColor} />
                         </ActionIcon>
                     </Tooltip>
                 )}
                 {socialLinks.twitter && (
                     <Tooltip label="Follow me on Twitter" position="top" withArrow>
                         <ActionIcon component="a" href={socialLinks.twitter} size="lg" variant="transparent">
-                            <IconBrandTwitterFilled size={30} color={icon_color} />
+                            <IconBrandTwitterFilled size={30} color={iconColor} />
                         </ActionIcon>
                     </Tooltip>
                 )}
                 {socialLinks.github && (
                     <Tooltip label="View my GitHub" position="top" withArrow>
                         <ActionIcon component="a" href={socialLinks.github} size="lg" variant="transparent">
-                            <IconBrandGithubFilled size={30} color={icon_color} />
+                            <IconBrandGithubFilled size={30} color={iconColor} />
                         </ActionIcon>
                     </Tooltip>
                 )}
                 {socialLinks.google && (
                     <Tooltip label="View my Google Scholar" position="top" withArrow>
                         <ActionIcon component="a" href={socialLinks.google} size="lg" variant="transparent">
-                            <IconBrandGoogleFilled size={30} color={icon_color} />
+                            <IconBrandGoogleFilled size={30} color={iconColor} />
                         </ActionIcon>
                     </Tooltip>
                 )}

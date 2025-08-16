@@ -44,7 +44,7 @@ export function RootPage() {
         style={{
           minHeight: "100vh",
           paddingTop: "60px", // Abstand für die fixe Navbar
-          paddingLeft: "calc(12vw + var(--mantine-spacing-md))",
+          paddingLeft: "calc(6vw + var(--mantine-spacing-md))",
         }}
       >
         {/* Optional: Innenabstand für Content */}
