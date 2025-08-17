@@ -4,6 +4,7 @@ import { NavBar } from '@/components /navbar/NavBar';
 import { Home } from '@/pages/Home';
 import { CV } from './pages/CV';
 import { Publications } from './pages/Publications';
+import { Footer } from './components /footer/Footer';
 
 // You can move these into their own files in a 'views' or 'sections' folder later
 const HomeContent = () => <Home />;
@@ -41,13 +42,17 @@ export function RootPage() {
         }
         style={{
           minHeight: '100vh',
-          paddingTop: '60px', // Abstand für die fixe Navbar
+          display: 'flex',
+          flexDirection: 'column',
+          paddingTop: '60px', 
           paddingLeft: 'calc(8vw + var(--mantine-spacing-md))',
           paddingRight: 'calc(8vw + var(--mantine-spacing-md))',
         }}
       >
         {/* Optional: Innenabstand für Content */}
-        <div style={{ paddingTop: '8vh' }}>{contentMap[activeLink]}</div>
+        <div style={{ flex: 1, paddingTop: '8vh' }}>{contentMap[activeLink]}</div>
+
+        <Footer />
       </Box>
     </>
   );
