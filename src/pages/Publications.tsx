@@ -1,6 +1,6 @@
 import { PublicationCard } from '@/components /publications/PublicationCard';
 import { publicationData } from '@/config';
-import { Stack, Text, useMantineColorScheme, useMantineTheme } from '@mantine/core';
+import { Stack, Text } from '@mantine/core';
 
 export type PublicationData = {
   imageUrl: string;
@@ -11,17 +11,6 @@ export type PublicationData = {
 };
 
 export function Publications() {
-  const theme = useMantineTheme();
-  const { colorScheme } = useMantineColorScheme();
-
-  const titleColor =
-    colorScheme === 'dark' ? theme.other.colors.dark.hoverText : theme.other.colors.light.hoverText;
-
-  const textColor =
-    colorScheme === 'dark'
-      ? theme.other.colors.dark.normalText
-      : theme.other.colors.light.normalText;
-
   // sort descending by date
   const sorted = publicationData
     .slice()
@@ -40,17 +29,17 @@ export function Publications() {
 
   return (
     <Stack gap="xl" justify="center" align="left" pb={100}>
-      <Text fz="h1" c={titleColor} fw="bolder" ta="left">
+      <Text fz="h1" fw="bolder" ta="left">
         Publications
       </Text>
-      <Text fz="h3" c={textColor} ta="left">
+      <Text fz="h3" ta="left">
         Here you can find a selection of my publications, including papers, articles, and other
         academic works.
       </Text>
 
       {years.map((year) => (
         <Stack key={year} gap="sm">
-          <Text fz="h2" c={titleColor} fw={700} ta="left">
+          <Text fz="h2" fw={700} ta="left">
             {year}
           </Text>
 

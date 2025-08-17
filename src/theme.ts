@@ -22,7 +22,7 @@ export const theme = createTheme({
 
       // Dark Mode
       dark: {
-        normalText: '#A0AEC0',
+        normalText: '#828282',
 
         // Color of the context box
         contentBg: '#1A202C',
@@ -30,7 +30,7 @@ export const theme = createTheme({
         // Nav bar specific
         navBg: '#2D3748',
         drawerText: '#6C686F',
-        hoverText: '#E2E8F0',
+        hoverText: '#C8C8C8',
       },
     },
   },

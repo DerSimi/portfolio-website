@@ -1,7 +1,7 @@
 import { Grid } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import { AboutMe } from '@/components /home/AboutMe';
-import { Education } from '@/components /home/Education';
+import { AboutMeView } from '@/components /home/AboutMeView';
+import { EducationView } from '@/components /home/EducationView';
 import { Interests } from '@/components /home/Interests';
 import { Profile } from '@/components /home/Profile';
 
@@ -23,7 +23,7 @@ export function Home() {
           }}
         >
           <Grid.Col span={12}>
-            <AboutMe />
+            <AboutMeView />
           </Grid.Col>
 
           <Grid.Col span={{ base: 12, md: 6 }}>
@@ -33,7 +33,7 @@ export function Home() {
           <Grid.Col
             span={{ base: 12, md: 6 }}
           >
-            <Education />
+            <EducationView />
           </Grid.Col>
         </Grid>
       </Grid.Col>

@@ -1,14 +1,13 @@
 import {
   Anchor,
-  Card,
   Group,
   Image,
   Paper,
   Stack,
   Text,
-  useMantineColorScheme,
   useMantineTheme,
 } from '@mantine/core';
+import { PersonalCard } from '../ui/PersonalCard';
 
 export function PublicationCard({
   imageUrl = '',
@@ -20,13 +19,9 @@ export function PublicationCard({
   ],
 }) {
   const theme = useMantineTheme();
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-
-  const bg =
-    colorScheme === 'dark' ? theme.other.colors.dark.navBg : theme.other.colors.light.navBg;
 
   return (
-    <Card shadow="sm" padding="xl" radius="lg" bg={bg}>
+    <PersonalCard>
       <Group align="flex-start" gap="xl" wrap="nowrap">
         {imageUrl ? (
           <Image src={imageUrl} alt={imageAlt} w={96} h={96} radius="md" />
@@ -46,7 +41,7 @@ export function PublicationCard({
         )}
 
         <Stack gap="xs" style={{ flex: 1 }}>
-          <Text component="p" lh="1.625" fw={600}>
+          <Text component="p" size="lg">
             {citation}
           </Text>
 
@@ -57,7 +52,7 @@ export function PublicationCard({
                   href={link.href}
                   style={{ color: theme.other.colors.accent }}
                   key={link.label}
-                  size="sm"
+                  size="md"
                   fw={500}
                   lh="1.625"
                   target="_blank"
@@ -70,6 +65,6 @@ export function PublicationCard({
           )}
         </Stack>
       </Group>
-    </Card>
+    </PersonalCard>
   );
 }

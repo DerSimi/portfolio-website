@@ -16,7 +16,7 @@ export function Footer() {
       <div className={classes.inner}>
         <Anchor
           href="/imprint"
-          fz="h5"
+          size="md"
           style={{ marginLeft: 'auto', color: textColor }}
           onMouseOver={e => (e.currentTarget.style.color = accentColor)}
           onMouseOut={e => (e.currentTarget.style.color = textColor)}

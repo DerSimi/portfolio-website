@@ -28,11 +28,14 @@ export const cvData = {
       primary: 'Machine Learning M. Sc.',
       secondary: 'University of Tübingen',
       date: 'Oct. 2025 - Present',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
     {
       primary: 'B.Sc. Computer Science',
       secondary: 'University of Tübingen',
       date: 'Oct. 2022 - Sept. 2025',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
   ],
   experience: [
@@ -40,11 +43,15 @@ export const cvData = {
       primary: 'Research Assistant',
       secondary: 'Max Planck Institute for Intelligent Systems',
       date: 'Oct 2023 - Present',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
     {
       primary: 'Software Engineer Intern',
       secondary: 'Robotics Startup XYZ',
       date: 'Jun 2022 - Aug 2022',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
   ],
   skills: [

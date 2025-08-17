@@ -1,50 +1,60 @@
-import { Group, Text } from '@mantine/core';
+import React from 'react';
+import { Flex, Group, Stack, Text, Title, useMantineTheme } from '@mantine/core';
+import { PersonalCard } from '../ui/PersonalCard';
 
-export function CvEntry({
-  primary,
-  secondary,
-  date,
-  textColor,
-}: {
+type CvEntryProps = {
   primary: string;
   secondary: string;
   date: string;
-  textColor: string;
-}) {
+  description: string;
+};
+
+export function CvEntry({ primary, secondary, date, description }: CvEntryProps) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Text c={textColor}>
-        <Text component="span" fz="h5" mb="md" fw={700} c={textColor}>
-          {primary}
+    <PersonalCard>
+      <Flex
+        justify="space-between"
+        align="flex-start" // Stellt sicher, dass mehrzeilige Titel gut aussehen
+        gap="md" // Abstand, falls der Text umbricht
+      >
+        {/* Linker Teil: Titel und Untertitel */}
+        <Stack gap={0}>
+          <Title size="lg">{primary}</Title>
+          <Text c="dimmed">{secondary}</Text>
+        </Stack>
+
+        {/* Rechter Teil: Datum */}
+        <Text size="sm" c="dimmed" style={{ flexShrink: 0 }}>
+          {date}
         </Text>
-        {secondary && (
-          <Text component="span" fz="h5" mb="md"c={textColor}>
-            , {secondary}
-          </Text>
-        )}
-      </Text>
-      <Text size="sm" c={textColor}>
-        {date}
-      </Text>
-    </div>
+      </Flex>
+
+      {/* Beschreibungstext */}
+      <Text size="md" mt="md">{description}</Text>
+    </PersonalCard>
   );
 }
 
-export function SkillEntry({
-  category,
-  skills,
-  textColor,
-}: {
-  category: string;
-  skills: string;
-  textColor: string;
-}) {
+type IconedCvHeadlineProps = {
+  IconComponent: React.ComponentType<{
+    size: number;
+    color: string;
+    style: React.CSSProperties;
+  }>;
+
+  text: string;
+};
+
+export function IconedCvHeadline({ IconComponent, text }: IconedCvHeadlineProps) {
+  const theme = useMantineTheme();
+  const colorAccent = theme.other.colors.accent;
+
   return (
-    <Group gap="xs">
-      <Text fz="h5" fw={700} c={textColor}>
-        {category}:
-      </Text>
-      <Text fz="h5" c={textColor}>{skills}</Text>
+    <Group gap={8} mb="xs">
+      <IconComponent size={28} color={colorAccent} style={{ marginBottom: 0 }} />
+      <Title fz="h2" mb={0}>
+        {text}
+      </Title>
     </Group>
   );
 }

@@ -47,14 +47,14 @@ export function Profile() {
       <Text ta="center" fz={30} fw="bolder" mt="md">
         {homeData.name}
       </Text>
-      <Text ta="center" c="dimmed" fz={16} fw="bold">
+      <Text ta="center" c="dimmed" size="md" fw="bold">
         {homeData.title}
       </Text>
 
       {/* Affiliations section */}
       <div style={{ marginTop: '1rem', marginBottom: '1.5rem' }}>
         {homeData.affiliations.map(({ affiliation, link }, index) => (
-          <Text key={index} ta="center" fz="sm" fw="bolder">
+          <Text key={index} ta="center" size="sm" fw="bolder">
             <a href={link} style={{ color: 'teal', textDecoration: 'none' }}>
               {affiliation}
             </a>
