@@ -1,11 +1,5 @@
+import { homeData } from '@/config';
 import { List, Title, useMantineColorScheme, useMantineTheme } from '@mantine/core';
-
-const interests = [
-  'Reinforcement Learning',
-  'Computer Vision for Robotics',
-  'Sensor Fusion & Perception',
-  'Autonomous Systems',
-];
 
 export function Interests() {
   const theme = useMantineTheme();
@@ -32,7 +26,7 @@ export function Interests() {
           item: { color: textColor },
         }}
       >
-        {interests.map((interest) => (
+        {homeData.interests.map((interest) => (
           <List.Item key={interest}>{interest}</List.Item>
         ))}
       </List>

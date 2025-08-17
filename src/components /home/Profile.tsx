@@ -1,7 +1,8 @@
 import {
   IconBrandGithubFilled,
   IconBrandGoogleFilled,
-  IconBrandTwitterFilled,
+  IconBrandXFilled,
+  IconBrandLinkedinFilled,
   IconMailFilled,
 } from '@tabler/icons-react';
 import {
@@ -70,10 +71,10 @@ export function Profile() {
             </ActionIcon>
           </Tooltip>
         )}
-        {homeData.socialLinks.twitter && (
-          <Tooltip label="Follow me on Twitter" position="top" withArrow>
-            <ActionIcon component="a" href={homeData.socialLinks.twitter} size="lg" variant="transparent">
-              <IconBrandTwitterFilled size={30} color={iconColor} />
+        {homeData.socialLinks.x && (
+          <Tooltip label="Follow me on X" position="top" withArrow>
+            <ActionIcon component="a" href={homeData.socialLinks.x} size="lg" variant="transparent">
+              <IconBrandXFilled size={30} color={iconColor} />
             </ActionIcon>
           </Tooltip>
         )}
@@ -81,6 +82,13 @@ export function Profile() {
           <Tooltip label="View my GitHub" position="top" withArrow>
             <ActionIcon component="a" href={homeData.socialLinks.github} size="lg" variant="transparent">
               <IconBrandGithubFilled size={30} color={iconColor} />
+            </ActionIcon>
+          </Tooltip>
+        )}
+        {homeData.socialLinks.linkedin && (
+          <Tooltip label="View my LinkedIn" position="top" withArrow>
+            <ActionIcon component="a" href={homeData.socialLinks.linkedin} size="lg" variant="transparent">
+              <IconBrandLinkedinFilled size={30} color={iconColor} />
             </ActionIcon>
           </Tooltip>
         )}

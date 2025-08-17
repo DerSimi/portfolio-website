@@ -28,7 +28,7 @@ export function Education() {
                 {edu.primary}
               </Text>
               <Text size="sm" c={textColor}>
-                {edu.primary}, {edu.date}
+                {edu.secondary}, {edu.date}
               </Text>
             </div>
           </Group>
