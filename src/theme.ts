@@ -11,7 +11,7 @@ export const theme = createTheme({
         // Used for general text
         normalText: '#656168',
 
-        // Color of the context box 
+        // Color of the context box
         contentBg: '#F9FAFB',
 
         // Nav bar specific
@@ -19,20 +19,19 @@ export const theme = createTheme({
         drawerText: '#6C686F',
         hoverText: '#111827',
       },
-      
+
       // Dark Mode
       dark: {
         normalText: '#A0AEC0',
 
-        // Color of the context box 
+        // Color of the context box
         contentBg: '#1A202C',
 
         // Nav bar specific
         navBg: '#2D3748',
         drawerText: '#6C686F',
         hoverText: '#E2E8F0',
-      }
-      
+      },
     },
   },
 });

@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useState } from 'react';
+import { IconMoonFilled, IconSunFilled } from '@tabler/icons-react';
 import {
   ActionIcon,
   Box,
@@ -11,7 +12,6 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconSunFilled, IconMoonFilled } from '@tabler/icons-react';
 import classes from './NavBar.module.css';
 
 interface NavBarProps {
@@ -71,13 +71,11 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
         className={classes.header}
         style={{
           backgroundColor:
-            colorScheme === 'dark'
-              ? theme.other.colors.dark.navBg
-              : theme.other.colors.light.navBg,
+            colorScheme === 'dark' ? theme.other.colors.dark.navBg : theme.other.colors.light.navBg,
         }}
       >
         <Group justify="space-between" h="100%">
-          <Group h="100%" gap={0} visibleFrom="sm" style={{ marginLeft: '8vw' }}>
+          <Group h="100%" gap={0} visibleFrom="sm" style={{ marginLeft: '8vw', paddingLeft: '0' }}>
             {items}
           </Group>
 
@@ -85,7 +83,7 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
             <ActionIcon
               onClick={() => toggleColorScheme()}
               variant="transparent"
-              size="lg"
+              size="auto"
               aria-label="Toggle color scheme"
               onMouseEnter={() => setIconHovered(true)}
               onMouseLeave={() => setIconHovered(false)}
@@ -136,12 +134,10 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
         zIndex={1000000}
         styles={{
           content: {
-            backgroundColor:
-              colorScheme === 'dark' ? theme.other.colors.dark.navBg : undefined,
+            backgroundColor: colorScheme === 'dark' ? theme.other.colors.dark.navBg : undefined,
           },
           header: {
-            backgroundColor:
-              colorScheme === 'dark' ? theme.other.colors.dark.navBg : undefined,
+            backgroundColor: colorScheme === 'dark' ? theme.other.colors.dark.navBg : undefined,
           },
           title: {
             color:

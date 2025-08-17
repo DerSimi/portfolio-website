@@ -1,7 +1,8 @@
 import '@mantine/core/styles.css';
+
 import { MantineProvider } from '@mantine/core';
-import { theme } from './theme';
 import { RootPage } from './RootPage';
+import { theme } from './theme';
 
 export default function App() {
   return (
@@ -15,4 +16,3 @@ export default function App() {
     </MantineProvider>
   );
 }
-
