@@ -31,7 +31,7 @@ export function PublicationCard({
             h={96}
             radius="md"
             shadow="false"
-            bg={theme.other.colors.accent}
+            bg="teal"
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
           >
             <Text fz={30} fw="bolder" ta="center" c="white">
@@ -50,7 +50,7 @@ export function PublicationCard({
               {links.map((link) => (
                 <Anchor
                   href={link.href}
-                  style={{ color: theme.other.colors.accent }}
+                  style={{ color: 'teal' }}
                   key={link.label}
                   size="md"
                   fw={500}

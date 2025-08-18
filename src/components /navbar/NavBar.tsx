@@ -36,7 +36,7 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
     let color;
 
     if (isActive) {
-      color = theme.other.colors.accent;
+      color = defaultTextColor;
     } else if (isHovered) {
       color = defaultTextColor;
     } else {

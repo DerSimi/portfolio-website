@@ -44,7 +44,7 @@ export function RootPage() {
           minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          paddingTop: '60px', 
+          paddingTop: '40px', 
           paddingLeft: 'calc(8vw + var(--mantine-spacing-md))',
           paddingRight: 'calc(8vw + var(--mantine-spacing-md))',
         }}

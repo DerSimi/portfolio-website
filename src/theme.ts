@@ -3,9 +3,6 @@ import { createTheme } from '@mantine/core';
 export const theme = createTheme({
   other: {
     colors: {
-      // General accent color, used for institution, highlighting, ...
-      accent: '#39D7C9',
-
       // Light Mode
       light: {
         // Color of the content space

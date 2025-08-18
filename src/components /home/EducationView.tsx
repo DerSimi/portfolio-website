@@ -1,4 +1,4 @@
-import { IconSchool } from '@tabler/icons-react';
+import SchoolIcon from '@mui/icons-material/School';
 import { Group, Stack, Text, Title } from '@mantine/core';
 import { cvData } from '@/config';
 
@@ -11,11 +11,9 @@ export function EducationView() {
       <Stack gap="lg">
         {cvData.education.map((edu) => (
           <Group align="flex-start" gap="md" wrap="nowrap" key={edu.primary}>
-            <IconSchool size={24} style={{ marginTop: '4px' }} />
+            <SchoolIcon sx={{ fontSize: 24 }} style={{ color: 'teal', marginTop: '4px' }} />
             <div>
-              <Text size="lg">
-                {edu.primary}
-              </Text>
+              <Text size="lg">{edu.primary}</Text>
               <Text size="sm" c="dimmed">
                 {edu.secondary}, {edu.date}
               </Text>

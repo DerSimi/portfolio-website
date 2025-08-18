@@ -35,7 +35,8 @@ export const cvData = {
       primary: 'B.Sc. Computer Science',
       secondary: 'University of Tübingen',
       date: 'Oct. 2022 - Sept. 2025',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
   ],
   experience: [
@@ -54,10 +55,19 @@ export const cvData = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
   ],
-  skills: [
-    { category: 'Programming', skills: 'Python, C++, MATLAB' },
-    { category: 'Frameworks', skills: 'PyTorch, TensorFlow, ROS, OpenCV' },
-    { category: 'Languages', skills: 'English (Fluent), German (Professional)' },
+  languageSkills: [
+    { name: 'English', level: 'Fluent', value: 95 },
+    { name: 'German', level: 'Professional', value: 80 },
+  ],
+  skillCategories: [
+    {
+      label: 'Programming',
+      skills: ['Python', 'C++', 'MATLAB'],
+    },
+    {
+      label: 'Frameworks',
+      skills: ['PyTorch', 'TensorFlow', 'ROS', 'OpenCV'],
+    },
   ],
 };
 

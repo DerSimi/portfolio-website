@@ -1,16 +1,23 @@
 import { IconBriefcase2Filled } from '@tabler/icons-react';
-import { Timeline, useMantineTheme } from '@mantine/core';
-import { CvEntry, IconedCvHeadline } from '@/components /cv/CvHelper';
+import { Group, Timeline, Title } from '@mantine/core';
+import { CvEntry } from '@/components /cv/CvHelper';
 import { cvData } from '@/config';
 
 export function ExperienceView() {
-  const theme = useMantineTheme();
-  const colorAccent = theme.other.colors.accent;
+  // Hardcoded teal for the timeline. Can not use the css keyword teal within
+  // the timeline because mantine will use a different color.
+  const teal = '#008080';
+
   return (
     <>
-      <IconedCvHeadline IconComponent={IconBriefcase2Filled} text="Experience" />
+      <Group gap={8} mb="xl">
+        <IconBriefcase2Filled size={28} color={teal} style={{ marginBottom: 0 }} />
+        <Title fz="h2" mb={0}>
+          Experience
+        </Title>
+      </Group>
 
-      <Timeline active={cvData.experience.length} lineWidth={2} color={colorAccent}>
+      <Timeline active={cvData.experience.length} color={teal} lineWidth={2}>
         {cvData.experience.map((entry, index) => (
           <Timeline.Item
             key={index}
@@ -20,8 +27,8 @@ export function ExperienceView() {
                   width: 18,
                   height: 18,
                   borderRadius: '50%',
-                  background: colorAccent,
-                  border: '2px solid ' + colorAccent,
+                  background: teal,
+                  border: `5px solid ${teal}`,
                 }}
               />
             }

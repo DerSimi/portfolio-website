@@ -10,19 +10,17 @@ export function CV() {
         Curriculum Vitae
       </Title>
 
-      {/* Grid-Container für das zweispaltige Layout */}
-      <Grid>
-        {/* === LINKE SPALTE === */}
-        <Grid.Col span={{ base: 12, md: 8 }}>
-          <Stack gap={40}>
-            <EducationView />
-            <ExperienceView />
-          </Stack>
+      <Grid gutter="xl">
+        <Grid.Col span={{ base: 12, md: 8 }} order={{ base: 1, md: 1 }}>
+          <EducationView />
         </Grid.Col>
 
-        {/* === RECHTE SPALTE === */}
-        <Grid.Col span={{ base: 12, md: 4 }}>
+        <Grid.Col span={{ base: 12, md: 4 }} order={{ base: 2, md: 2 }}>
           <SkillView />
+        </Grid.Col>
+
+        <Grid.Col span={{ base: 12, md: 8 }} order={{ base: 3, md: 3 }}>
+          <ExperienceView />
         </Grid.Col>
       </Grid>
     </Box>
