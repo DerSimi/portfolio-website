@@ -27,6 +27,9 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [iconHovered, setIconHovered] = useState(false);
 
+  const defaultTextColor = colorScheme === 'dark' ? theme.colors.dark[0] : theme.black;
+  const dimmedColor = colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6];
+
   const items = links.map((link) => {
     const isActive = activeLink === link.label;
     const isHovered = hoveredLink === link.label;
@@ -35,15 +38,9 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
     if (isActive) {
       color = theme.other.colors.accent;
     } else if (isHovered) {
-      color =
-        colorScheme === 'dark'
-          ? theme.other.colors.dark.hoverText
-          : theme.other.colors.light.hoverText;
+      color = defaultTextColor;
     } else {
-      color =
-        colorScheme === 'dark'
-          ? theme.other.colors.dark.normalText
-          : theme.other.colors.light.normalText;
+      color = dimmedColor;
     }
 
     return (
@@ -71,7 +68,7 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
         className={classes.header}
         style={{
           backgroundColor:
-            colorScheme === 'dark' ? theme.other.colors.dark.navBg : theme.other.colors.light.navBg,
+            colorScheme === 'dark' ? theme.other.colors.dark.boxBg : theme.other.colors.light.boxBg,
         }}
       >
         <Group justify="space-between" h="100%">
@@ -89,22 +86,9 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
               onMouseLeave={() => setIconHovered(false)}
             >
               {colorScheme === 'dark' ? (
-                <IconSunFilled
-                  color={
-                    iconHovered
-                      ? theme.other.colors.dark.hoverText
-                      : theme.other.colors.dark.normalText
-                  }
-                />
+                <IconSunFilled color={iconHovered ? defaultTextColor : dimmedColor} />
               ) : (
-                <IconMoonFilled
-                  size={18}
-                  color={
-                    iconHovered
-                      ? theme.other.colors.light.hoverText
-                      : theme.other.colors.light.normalText
-                  }
-                />
+                <IconMoonFilled size={18} color={iconHovered ? defaultTextColor : dimmedColor} />
               )}
             </ActionIcon>
           </Group>
@@ -115,11 +99,7 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
             onClick={toggleDrawer}
             hiddenFrom="sm"
             style={{ marginRight: '8vw' }}
-            color={
-              colorScheme === 'dark'
-                ? theme.other.colors.dark.normalText
-                : theme.other.colors.light.drawerText
-            }
+            color={dimmedColor}
           />
         </Group>
       </header>
@@ -134,29 +114,29 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
         zIndex={1000000}
         styles={{
           content: {
-            backgroundColor: colorScheme === 'dark' ? theme.other.colors.dark.navBg : undefined,
+            backgroundColor:
+              colorScheme === 'dark'
+                ? theme.other.colors.dark.boxBg
+                : theme.other.colors.light.boxBg,
           },
           header: {
-            backgroundColor: colorScheme === 'dark' ? theme.other.colors.dark.navBg : undefined,
+            backgroundColor:
+              colorScheme === 'dark'
+                ? theme.other.colors.dark.boxBg
+                : theme.other.colors.light.boxBg,
           },
           title: {
-            color:
-              colorScheme === 'dark'
-                ? theme.other.colors.dark.normalText
-                : theme.other.colors.light.drawerText,
+            color: dimmedColor,
           },
           close: {
-            color:
-              colorScheme === 'dark'
-                ? theme.other.colors.dark.normalText
-                : theme.other.colors.light.drawerText,
+            color: dimmedColor,
           },
         }}
       >
         <ScrollArea h="calc(100vh - 80px" mx="-md">
           <Divider my="sm" />
 
-          {items}
+          <Box pl="md">{items}</Box>
         </ScrollArea>
       </Drawer>
     </Box>

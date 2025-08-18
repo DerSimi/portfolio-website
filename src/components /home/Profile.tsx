@@ -1,8 +1,8 @@
 import {
   IconBrandGithubFilled,
   IconBrandGoogleFilled,
-  IconBrandXFilled,
   IconBrandLinkedinFilled,
+  IconBrandXFilled,
   IconMailFilled,
 } from '@tabler/icons-react';
 import {
@@ -21,12 +21,9 @@ import { homeData } from '@/config';
 export function Profile() {
   const theme = useMantineTheme();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const isSmUp = useMediaQuery('(min-width: 48em)'); // Mantine sm = 48em = 768px
+  const iconColor = colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6];
 
-  const iconColor =
-    colorScheme === 'dark'
-      ? theme.other.colors.dark.normalText
-      : theme.other.colors.light.normalText;
+  const isSmUp = useMediaQuery('(min-width: 48em)'); // Mantine sm = 48em = 768px
 
   return (
     <Container p={0} w={300} style={{ margin: isSmUp ? 'auto' : 0, textAlign: 'center' }}>
@@ -66,7 +63,12 @@ export function Profile() {
       <Group gap="md" justify="center">
         {homeData.socialLinks.email && (
           <Tooltip label="Email me" position="top" withArrow>
-            <ActionIcon component="a" href={homeData.socialLinks.email} size="lg" variant="transparent">
+            <ActionIcon
+              component="a"
+              href={homeData.socialLinks.email}
+              size="lg"
+              variant="transparent"
+            >
               <IconMailFilled size={30} color={iconColor} />
             </ActionIcon>
           </Tooltip>
@@ -80,21 +82,36 @@ export function Profile() {
         )}
         {homeData.socialLinks.github && (
           <Tooltip label="View my GitHub" position="top" withArrow>
-            <ActionIcon component="a" href={homeData.socialLinks.github} size="lg" variant="transparent">
+            <ActionIcon
+              component="a"
+              href={homeData.socialLinks.github}
+              size="lg"
+              variant="transparent"
+            >
               <IconBrandGithubFilled size={30} color={iconColor} />
             </ActionIcon>
           </Tooltip>
         )}
         {homeData.socialLinks.linkedin && (
           <Tooltip label="View my LinkedIn" position="top" withArrow>
-            <ActionIcon component="a" href={homeData.socialLinks.linkedin} size="lg" variant="transparent">
+            <ActionIcon
+              component="a"
+              href={homeData.socialLinks.linkedin}
+              size="lg"
+              variant="transparent"
+            >
               <IconBrandLinkedinFilled size={30} color={iconColor} />
             </ActionIcon>
           </Tooltip>
         )}
         {homeData.socialLinks.google && (
           <Tooltip label="View my Google Scholar" position="top" withArrow>
-            <ActionIcon component="a" href={homeData.socialLinks.google} size="lg" variant="transparent">
+            <ActionIcon
+              component="a"
+              href={homeData.socialLinks.google}
+              size="lg"
+              variant="transparent"
+            >
               <IconBrandGoogleFilled size={30} color={iconColor} />
             </ActionIcon>
           </Tooltip>

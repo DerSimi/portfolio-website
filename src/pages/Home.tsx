@@ -9,9 +9,17 @@ export function Home() {
   const isSmUp = useMediaQuery('(min-width: 48em)'); // Mantine sm = 48em = 768px
 
   // TODO: marginLeft: isSmUp ? -60 : 0
-  return ( 
-    <Grid gutter="md" style={{ maxWidth: 1500}}>
-      <Grid.Col span={{ base: 12, lg: 3 }} style={{ alignSelf: 'flex-start', marginTop: '-1rem' }}>
+  return (
+    <Grid gutter="md" style={{ maxWidth: 1500 }}>
+      <Grid.Col
+        span={{ base: 12, lg: 3 }}
+        style={{
+          alignSelf: 'flex-start',
+          marginTop: '-1rem',
+          display: 'flex',
+          justifyContent: isSmUp ? 'flex-start' : 'center'
+        }}
+      >
         <Profile />
       </Grid.Col>
 
@@ -19,7 +27,7 @@ export function Home() {
         <Grid
           gutter="md"
           style={{
-            maxWidth: 1000
+            maxWidth: 1000,
           }}
         >
           <Grid.Col span={12}>
@@ -30,9 +38,7 @@ export function Home() {
             <Interests />
           </Grid.Col>
 
-          <Grid.Col
-            span={{ base: 12, md: 6 }}
-          >
+          <Grid.Col span={{ base: 12, md: 6 }}>
             <EducationView />
           </Grid.Col>
         </Grid>

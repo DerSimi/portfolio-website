@@ -8,29 +8,18 @@ export const theme = createTheme({
 
       // Light Mode
       light: {
-        // Used for general text
-        normalText: '#656168',
-
-        // Color of the context box
+        // Color of the content space
         contentBg: '#F9FAFB',
-
-        // Nav bar specific
-        navBg: '#FFFFFF',
-        drawerText: '#6C686F',
-        hoverText: '#111827',
+        // Color of boxes (Navbar, Cards)
+        boxBg: '#FFFFFF',
       },
 
       // Dark Mode
       dark: {
-        normalText: '#828282',
-
-        // Color of the context box
+        // Color of the content space
         contentBg: '#1A202C',
-
-        // Nav bar specific
-        navBg: '#2D3748',
-        drawerText: '#6C686F',
-        hoverText: '#C8C8C8',
+        // Color of boxes (Navbar, Cards)
+        boxBg: '#2D3748',
       },
     },
   },

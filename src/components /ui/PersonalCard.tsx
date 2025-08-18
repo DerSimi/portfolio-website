@@ -10,8 +10,8 @@ export function PersonalCard({ children, style, ...rest }: PersonalCardProps) {
 
   const bg =
     colorScheme === 'dark'
-      ? theme.other.colors.dark.navBg
-      : theme.other.colors.light.navBg;
+      ? theme.other.colors.dark.boxBg
+      : theme.other.colors.light.boxBg;
 
   return (
     <Card

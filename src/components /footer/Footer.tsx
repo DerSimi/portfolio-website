@@ -5,21 +5,18 @@ export function Footer() {
   const theme = useMantineTheme();
   const { colorScheme } = useMantineColorScheme();
 
-  const textColor =
-    colorScheme === 'dark'
-      ? theme.other.colors.dark.normalText
-      : theme.other.colors.light.normalText;
-  const accentColor = theme.other.colors.accent;
-  
+  const defaultTextColor = colorScheme === 'dark' ? theme.colors.dark[0] : theme.black;
+  const dimmedColor = colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6];
+
   return (
-    <div className={classes.footer}>      
+    <div className={classes.footer}>
       <div className={classes.inner}>
         <Anchor
           href="/imprint"
           size="md"
-          style={{ marginLeft: 'auto', color: textColor }}
-          onMouseOver={e => (e.currentTarget.style.color = accentColor)}
-          onMouseOut={e => (e.currentTarget.style.color = textColor)}
+          style={{ marginLeft: 'auto', color: dimmedColor, textDecoration: 'none' }}
+          onMouseOver={(e) => (e.currentTarget.style.color = defaultTextColor)}
+          onMouseOut={(e) => (e.currentTarget.style.color = dimmedColor)}
         >
           Imprint
         </Anchor>
