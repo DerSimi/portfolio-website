@@ -1,6 +1,6 @@
+import { Stack, Text, Title } from '@mantine/core';
 import { PublicationCard } from '@/components /publications/PublicationCard';
 import { publicationData } from '@/config';
-import { Stack, Text } from '@mantine/core';
 
 export type PublicationData = {
   imageUrl: string;
@@ -28,11 +28,12 @@ export function Publications() {
   const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
 
   return (
-    <Stack gap="xl" justify="center" align="left" pb={100}>
-      <Text fz="h1" fw="bolder" ta="left">
+    <>
+      <Title order={2} fz="h1" mb="xl">
         Publications
-      </Text>
-      <Text fz="h3" ta="left">
+      </Title>
+
+      <Text fz="h3" ta="left" mb="lg">
         Here you can find a selection of my publications, including papers, articles, and other
         academic works.
       </Text>
@@ -56,6 +57,6 @@ export function Publications() {
           </Stack>
         </Stack>
       ))}
-    </Stack>
+    </>
   );
 }

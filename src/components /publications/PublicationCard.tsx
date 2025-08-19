@@ -7,7 +7,7 @@ import {
   Text,
   useMantineTheme,
 } from '@mantine/core';
-import { PersonalCard } from '../ui/PersonalCard';
+import { PersonalCard } from '../PersonalCard';
 
 export function PublicationCard({
   imageUrl = '',

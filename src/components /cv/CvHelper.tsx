@@ -1,5 +1,5 @@
 import { Flex, Stack, Text, Title } from '@mantine/core';
-import { PersonalCard } from '../ui/PersonalCard';
+import { PersonalCard } from '../PersonalCard';
 
 type CvEntryProps = {
   primary: string;

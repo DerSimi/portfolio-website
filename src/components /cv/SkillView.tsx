@@ -1,7 +1,7 @@
 import { IconStarsFilled } from '@tabler/icons-react';
 import { Badge, Group, Progress, Stack, Text, Title } from '@mantine/core';
 import { cvData } from '@/config';
-import { PersonalCard } from '../ui/PersonalCard';
+import { PersonalCard } from '../PersonalCard';
 
 export function SkillView() {
   return (
