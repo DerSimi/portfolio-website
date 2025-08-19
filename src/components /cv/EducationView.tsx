@@ -6,14 +6,14 @@ import { cvData } from '@/config';
 export function EducationView() {
   return (
     <>
-      <Group gap={8} mb="xl">
+      <Group gap={8} mb="md">
         <SchoolIcon style={{ fontSize: 28, color: 'teal', marginBottom: 0 }} />
         <Title fz="h2" mb={0}>
           Education
         </Title>
       </Group>
 
-      <Stack gap="lg">
+      <Stack gap="xl">
         {cvData.education.map((entry) => (
           <CvEntry key={entry.primary} {...entry} />
         ))}

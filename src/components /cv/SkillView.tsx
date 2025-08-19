@@ -6,14 +6,14 @@ import { PersonalCard } from '../ui/PersonalCard';
 export function SkillView() {
   return (
     <PersonalCard>
-      <Stack gap="lg">
-        <Group gap={8} mb="xs">
-          <IconStarsFilled size={28} color="teal" style={{ marginBottom: 0 }} />
-          <Title fz="h2" mb={0}>
-            Skills
-          </Title>
-        </Group>
+      <Group gap={8} mb="md">
+        <IconStarsFilled size={28} color="teal" style={{ marginBottom: 0 }} />
+        <Title fz="h2" mb={0}>
+          Skills
+        </Title>
+      </Group>
 
+      <Stack gap="lg">
         {cvData.skillCategories.map((category) => (
           <Stack gap="xs" key={category.label}>
             <Text size="md">{category.label}</Text>

@@ -38,12 +38,12 @@ export function Publications() {
       </Text>
 
       {years.map((year) => (
-        <Stack key={year} gap="sm">
+        <Stack key={year} gap="md">
           <Text fz="h2" fw={700} ta="left">
             {year}
           </Text>
 
-          <Stack gap="md">
+          <Stack gap="xl">
             {byYear[year].map((pub, idx) => (
               <PublicationCard
                 key={`${year}-${idx}`}

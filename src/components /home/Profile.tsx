@@ -8,6 +8,7 @@ import {
 import {
   ActionIcon,
   Avatar,
+  Box,
   Container,
   Group,
   Text,
@@ -41,15 +42,15 @@ export function Profile() {
       </Avatar>
 
       {/* Name and Title section */}
-      <Text ta="center" fz={30} fw="bolder" mt="md">
+      <Text ta="center" fz={30} fw="bolder" mt="md" lh={1.1}>
         {homeData.name}
       </Text>
-      <Text ta="center" c="dimmed" size="md" fw="bold">
+      <Text ta="center" size="md" fw="bold" mt="lg" c="dimmed">
         {homeData.title}
       </Text>
 
       {/* Affiliations section */}
-      <div style={{ marginTop: '1rem', marginBottom: '1.5rem' }}>
+      <Box mt="xs" mb="xs">
         {homeData.affiliations.map(({ affiliation, link }, index) => (
           <Text key={index} ta="center" size="sm" fw="bolder">
             <a href={link} style={{ color: 'teal', textDecoration: 'none' }}>
@@ -57,7 +58,7 @@ export function Profile() {
             </a>
           </Text>
         ))}
-      </div>
+      </Box>
 
       {/* Social Links section */}
       <Group gap="md" justify="center">
