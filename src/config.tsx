@@ -1,10 +1,17 @@
 import { PublicationData } from './pages/Publications';
 
+// Website title and icon
+export const websiteConfig = {
+  title: 'Simon Rappenecker', // Static across all pages
+  icon: 'https://avatars.githubusercontent.com/u/16435889?v=4',
+  // Or a local file, e. g. src/myicon.svg
+};
+
 // Home config
 export const homeData = {
   name: 'Simon Rappenecker',
-  imageLink: 'https://avatars.githubusercontent.com/u/16435889?v=4',
-  avatarInitials: '',
+  avatarInitials: 'SR',
+  imageLink: 'https://avatars.githubusercontent.com/u/16435889?v=4', // this will overwrite the avatarInitials if not empty
   title: 'Machine Learning M. Sc.',
   affiliations: [
     { affiliation: 'University of Tübingen', link: 'https://uni-tuebingen.de/en/' },
@@ -12,13 +19,29 @@ export const homeData = {
   ],
   socialLinks: {
     email: 'mailto:simon@rappenecker.me',
-    x: '',
+    x: '', // no text means disabled
     linkedin: 'https://www.linkedin.com/in/simon-rappenecker/',
     github: 'https://github.com/DerSimi',
     google: '',
   },
   aboutme: `My name is Simon and I am currently pursuing my M. Sc. in Machine Learning at the University of Tübingen, with an interest in Software Engineering, particularly emphasizing hardware-level programming. My fascination extends to the realm of Machine Learning as well. Feel free to check out my GitHub Profile or contact me via email.`,
   interests: ['Machine Learning', 'Robotics', 'Computer Vision', 'Mathematics'],
+  education: [ // This seems redundant but allows full flexibility what education to show
+    {
+      primary: 'Machine Learning M. Sc.',
+      secondary: 'University of Tübingen',
+      date: 'Oct. 2025 - Present',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
+    },
+    {
+      primary: 'B.Sc. Computer Science',
+      secondary: 'University of Tübingen',
+      date: 'Oct. 2022 - Sept. 2025',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
+    },
+  ],
 };
 
 //CV config
@@ -60,6 +83,7 @@ export const cvData = {
     { name: 'German', level: 'Professional', value: 80 },
   ],
   skillCategories: [
+    // You can create as many categories as wanted
     {
       label: 'Programming',
       skills: ['Python', 'C++', 'MATLAB'],
