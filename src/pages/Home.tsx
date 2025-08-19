@@ -6,7 +6,7 @@ import { Interests } from '@/components /home/Interests';
 import { Profile } from '@/components /home/Profile';
 
 export function Home() {
-  const isSmUp = useMediaQuery('(min-width: 48em)'); // Mantine sm = 48em = 768px
+  const isSmUp = useMediaQuery('(min-width: 48em)'); // Mantine sm = 48em
 
   // TODO: marginLeft: isSmUp ? -60 : 0
   return (
