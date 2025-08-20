@@ -3,7 +3,7 @@ import { Box, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { NavBar } from '@/components /navbar/NavBar';
 import { Home } from '@/pages/Home';
 import { Footer } from './components /footer/Footer';
-import { websiteConfig } from './config';
+import { config } from './config';
 import { CV } from './pages/CV';
 import { Publications } from './pages/Publications';
 
@@ -32,7 +32,7 @@ export function RootPage() {
   const theme = useMantineTheme();
 
   useEffect(() => {
-    document.title = websiteConfig.title;
+    document.title = config.title;
 
     let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement | null;
 
@@ -42,7 +42,7 @@ export function RootPage() {
       document.head.appendChild(link);
     }
 
-    link.href = websiteConfig.icon;
+    link.href = config.icon;
   }, []);
 
   return (

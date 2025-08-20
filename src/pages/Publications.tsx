@@ -1,6 +1,6 @@
 import { Stack, Text, Title } from '@mantine/core';
 import { PublicationCard } from '@/components /publications/PublicationCard';
-import { publicationData } from '@/config';
+import { publications } from '@/config';
 
 export type PublicationData = {
   imageUrl: string;
@@ -12,7 +12,7 @@ export type PublicationData = {
 
 export function Publications() {
   // sort descending by date
-  const sorted = publicationData
+  const sorted = publications
     .slice()
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 

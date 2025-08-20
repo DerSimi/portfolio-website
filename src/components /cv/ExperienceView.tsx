@@ -1,7 +1,7 @@
 import { IconBriefcase2Filled } from '@tabler/icons-react';
 import { Group, Timeline, Title } from '@mantine/core';
 import { CvEntry } from '@/components /cv/CvHelper';
-import { cvData } from '@/config';
+import { cv } from '@/config';
 
 export function ExperienceView() {
   // Hardcoded teal for the timeline. Can not use the css keyword teal within
@@ -17,8 +17,8 @@ export function ExperienceView() {
         </Title>
       </Group>
 
-      <Timeline active={cvData.experience.length} color={teal} lineWidth={2}>
-        {cvData.experience.map((entry, index) => (
+      <Timeline active={cv.experience.length} color={teal} lineWidth={2}>
+        {cv.experience.map((entry, index) => (
           <Timeline.Item
             key={index}
             bullet={

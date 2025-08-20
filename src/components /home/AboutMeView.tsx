@@ -1,4 +1,4 @@
-import { homeData } from '@/config';
+import { home } from '@/config';
 import { Text, Title } from '@mantine/core';
 
 export function AboutMeView() {
@@ -8,7 +8,7 @@ export function AboutMeView() {
         About me
       </Title>
       <Text fz="md" mb="md" style={{ maxWidth: '64rem', width: '100%' }}>
-        {homeData.aboutme}
+        {home.aboutme}
       </Text>
     </>
   );

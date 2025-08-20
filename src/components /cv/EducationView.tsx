@@ -1,7 +1,7 @@
 import SchoolIcon from '@mui/icons-material/School';
 import { Group, Stack, Title } from '@mantine/core';
 import { CvEntry } from '@/components /cv/CvHelper';
-import { cvData } from '@/config';
+import { cv } from '@/config';
 
 export function EducationView() {
   return (
@@ -14,7 +14,7 @@ export function EducationView() {
       </Group>
 
       <Stack gap="xl">
-        {cvData.education.map((entry) => (
+        {cv.education.map((entry) => (
           <CvEntry key={entry.primary} {...entry} />
         ))}
       </Stack>

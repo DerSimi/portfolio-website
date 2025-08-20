@@ -1,6 +1,6 @@
 import { IconChevronRight } from '@tabler/icons-react';
 import { List, Title } from '@mantine/core';
-import { homeData } from '@/config';
+import { home } from '@/config';
 
 export function Interests() {
   return (
@@ -9,7 +9,7 @@ export function Interests() {
         Interests
       </Title>
       <List spacing="xs" size="md" center icon={<IconChevronRight size={18} color="teal" />}>
-        {homeData.interests.map((interest) => (
+        {home.interests.map((interest) => (
           <List.Item key={interest}>{interest}</List.Item>
         ))}
       </List>

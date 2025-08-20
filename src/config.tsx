@@ -1,32 +1,36 @@
 import { PublicationData } from './pages/Publications';
 
-// Website title and icon
-export const websiteConfig = {
-  title: 'Simon Rappenecker', // Static across all pages
+// General configuration
+export const config = {
+  // Website title, static accross all pages
+  title: 'Simon Rappenecker',
+  // Website icon, static accross all pages, use alternatively a local file, e. g. src/myicon.svg
   icon: 'https://avatars.githubusercontent.com/u/16435889?v=4',
-  // Or a local file, e. g. src/myicon.svg
 };
 
 // Home config
-export const homeData = {
+export const home = {
   name: 'Simon Rappenecker',
   avatarInitials: 'SR',
-  imageLink: 'https://avatars.githubusercontent.com/u/16435889?v=4', // this will overwrite the avatarInitials if not empty
+  // This will overwrite the avatarInitials if not empty
+  imageLink: 'https://avatars.githubusercontent.com/u/16435889?v=4',
   title: 'Machine Learning M. Sc.',
+  // Multiple affiliations possible
   affiliations: [
     { affiliation: 'University of Tübingen', link: 'https://uni-tuebingen.de/en/' },
     // { affiliation: 'Tübingen AI Center', link: 'https://www.tuebingen.ai/' },
   ],
   socialLinks: {
     email: 'mailto:simon@rappenecker.me',
-    x: '', // no text means disabled
+    x: '', // No text means disabled
     linkedin: 'https://www.linkedin.com/in/simon-rappenecker/',
     github: 'https://github.com/DerSimi',
     google: '',
   },
   aboutme: `My name is Simon and I am currently pursuing my M. Sc. in Machine Learning at the University of Tübingen, with an interest in Software Engineering, particularly emphasizing hardware-level programming. My fascination extends to the realm of Machine Learning as well. Feel free to check out my GitHub Profile or contact me via email.`,
   interests: ['Machine Learning', 'Robotics', 'Computer Vision', 'Mathematics'],
-  education: [ // This seems redundant but allows full flexibility what education to show
+  education: [
+    // This seems redundant but allows full flexibility what education to show
     {
       primary: 'Machine Learning M. Sc.',
       secondary: 'University of Tübingen',
@@ -45,7 +49,7 @@ export const homeData = {
 };
 
 //CV config
-export const cvData = {
+export const cv = {
   education: [
     {
       primary: 'Machine Learning M. Sc.',
@@ -96,10 +100,10 @@ export const cvData = {
 };
 
 // Publications config
-export const publicationData: PublicationData[] = [
+export const publications: PublicationData[] = [
   {
     imageUrl: '',
-    imageAlt: 'EXAM',
+    imageAlt: 'EXAM', // will be overriden if an image url is present
     date: '2023-01-01',
     citation: 'Doe, J. (2023). Example Publication Title. *Journal of Examples*.',
     links: [

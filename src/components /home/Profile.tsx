@@ -17,7 +17,7 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import { homeData } from '@/config';
+import { home } from '@/config';
 
 export function Profile() {
   const theme = useMantineTheme();
@@ -30,7 +30,7 @@ export function Profile() {
     <Container p={0} w={300} style={{ margin: isSmUp ? 'auto' : 0, textAlign: 'center' }}>
       {/* Avatar section */}
       <Avatar
-        src={homeData.imageLink && homeData.imageLink !== '' ? homeData.imageLink : null}
+        src={home.imageLink && home.imageLink !== '' ? home.imageLink : null}
         alt="User avatar"
         color="teal"
         size={160}
@@ -38,20 +38,20 @@ export function Profile() {
         mx="auto"
         style={{ borderRadius: '50%', boxShadow: '0 17px 30px rgba(0, 0, 0, 0.1)' }}
       >
-        {homeData.avatarInitials}
+        {home.avatarInitials}
       </Avatar>
 
       {/* Name and Title section */}
       <Text ta="center" fz={30} fw="bolder" mt="md" lh={1.1}>
-        {homeData.name}
+        {home.name}
       </Text>
       <Text ta="center" size="md" fw="bold" mt="lg" c="dimmed">
-        {homeData.title}
+        {home.title}
       </Text>
 
       {/* Affiliations section */}
       <Box mt="xs" mb="xs">
-        {homeData.affiliations.map(({ affiliation, link }, index) => (
+        {home.affiliations.map(({ affiliation, link }, index) => (
           <Text key={index} ta="center" size="sm" fw="bolder">
             <a href={link} style={{ color: 'teal', textDecoration: 'none' }}>
               {affiliation}
@@ -62,11 +62,11 @@ export function Profile() {
 
       {/* Social Links section */}
       <Group gap="md" justify="center">
-        {homeData.socialLinks.email && (
+        {home.socialLinks.email && (
           <Tooltip label="Email me" position="top" withArrow>
             <ActionIcon
               component="a"
-              href={homeData.socialLinks.email}
+              href={home.socialLinks.email}
               size="lg"
               variant="transparent"
             >
@@ -74,18 +74,18 @@ export function Profile() {
             </ActionIcon>
           </Tooltip>
         )}
-        {homeData.socialLinks.x && (
+        {home.socialLinks.x && (
           <Tooltip label="Follow me on X" position="top" withArrow>
-            <ActionIcon component="a" href={homeData.socialLinks.x} size="lg" variant="transparent">
+            <ActionIcon component="a" href={home.socialLinks.x} size="lg" variant="transparent">
               <IconBrandXFilled size={30} color={iconColor} />
             </ActionIcon>
           </Tooltip>
         )}
-        {homeData.socialLinks.github && (
+        {home.socialLinks.github && (
           <Tooltip label="View my GitHub" position="top" withArrow>
             <ActionIcon
               component="a"
-              href={homeData.socialLinks.github}
+              href={home.socialLinks.github}
               size="lg"
               variant="transparent"
             >
@@ -93,11 +93,11 @@ export function Profile() {
             </ActionIcon>
           </Tooltip>
         )}
-        {homeData.socialLinks.linkedin && (
+        {home.socialLinks.linkedin && (
           <Tooltip label="View my LinkedIn" position="top" withArrow>
             <ActionIcon
               component="a"
-              href={homeData.socialLinks.linkedin}
+              href={home.socialLinks.linkedin}
               size="lg"
               variant="transparent"
             >
@@ -105,11 +105,11 @@ export function Profile() {
             </ActionIcon>
           </Tooltip>
         )}
-        {homeData.socialLinks.google && (
+        {home.socialLinks.google && (
           <Tooltip label="View my Google Scholar" position="top" withArrow>
             <ActionIcon
               component="a"
-              href={homeData.socialLinks.google}
+              href={home.socialLinks.google}
               size="lg"
               variant="transparent"
             >

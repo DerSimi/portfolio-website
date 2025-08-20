@@ -1,6 +1,6 @@
 import SchoolIcon from '@mui/icons-material/School';
 import { Group, Stack, Text, Title } from '@mantine/core';
-import { homeData } from '@/config';
+import { home } from '@/config';
 
 export function EducationView() {
   return (
@@ -9,7 +9,7 @@ export function EducationView() {
         Education
       </Title>
       <Stack gap="lg">
-        {homeData.education.map((edu) => (
+        {home.education.map((edu) => (
           <Group align="flex-start" gap="md" wrap="nowrap" key={edu.primary}>
             <SchoolIcon sx={{ fontSize: 24 }} style={{ color: 'teal', marginTop: '4px' }} />
             <div>
