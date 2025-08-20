@@ -8,8 +8,9 @@
 
 Looking for a simple yet complete personal website focused on projects and publications, without overengineered templates? You're in the right place! This project offers a clean, minimalist design, built with React and Mantine.
 
-[Live Demo](https://rappenecker.me)
+# ![Project Thumbnail](assets/diagonal_split.png)
 
+[Live Demo](https://rappenecker.me)
 ## ⭐ Key Features
 - Clean and minimalist design, no unnecessary animations
 - Fully configurable
