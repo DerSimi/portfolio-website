@@ -1,6 +1,6 @@
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Mantine](https://img.shields.io/badge/Mantine-8.2.4-blue)
-![Vite](https://img.shields.io/badge/Vite-5.2.10-646cff)
+![Vite](https://img.shields.io/badge/Vite-6.3.5-646cff)
 ![React](https://img.shields.io/badge/React-19.1.1-61dafb)
 
 
