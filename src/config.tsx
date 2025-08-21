@@ -56,6 +56,7 @@ export const home = {
 export const cv = {
   pageTitle: 'CV',
   longTitle: 'Curriculum Vitae',
+  //Education
   educationTitle: 'Education',
   education: [
     {
@@ -73,6 +74,7 @@ export const cv = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
   ],
+  //Experience
   experienceTitle: 'Experience',
   experience: [
     {
@@ -90,11 +92,13 @@ export const cv = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
   ],
+  //Language skills
   languagesTitle: 'Languages',
   languageSkills: [
     { name: 'English', level: 'Fluent', value: 95 },
     { name: 'German', level: 'Professional', value: 80 },
   ],
+  //Skills
   skillsTitle: 'Skills',
   skillCategories: [
     // You can create as many categories as wanted
@@ -153,4 +157,17 @@ export const projects = {
 // Imprint config
 export const imprint = {
   pageTitle: 'Imprint',
+  // Not required in all countries.
+  enableImprint: true,
+  // Information part
+  informationTitle: 'Information according to § 5 TMG',
+  information: `Simon Rappenecker
+  Musterstraße 123
+  12345 Musterstadt
+  Germany`,
+  // Contact part
+  // In Germany you need two ways of contact
+  contactTitle: 'Contact',
+  email: 'simon@rappenecker.me',
+  phone: 'On request',
 };

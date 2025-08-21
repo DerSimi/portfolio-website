@@ -17,19 +17,21 @@ export function Footer({ isImprint, setImprint }: FooterProps) {
   return (
     <div className={classes.footer}>
       <div className={classes.inner}>
-        <Anchor
-          href="/imprint"
-          size="md"
-          style={{ marginLeft: 'auto', color: dimmedColor, textDecoration: 'none' }}
-          onMouseOver={(e) => (e.currentTarget.style.color = defaultTextColor)}
-          onMouseOut={(e) => (e.currentTarget.style.color = dimmedColor)}
-          onClick={(e) => {
-            e.preventDefault();
-            setImprint(!isImprint);
-          }}
-        >
-          {imprint.pageTitle}
-        </Anchor>
+        {imprint.enableImprint ? (
+          <Anchor
+            href="/imprint"
+            size="md"
+            style={{ marginLeft: 'auto', color: dimmedColor, textDecoration: 'none' }}
+            onMouseOver={(e) => (e.currentTarget.style.color = defaultTextColor)}
+            onMouseOut={(e) => (e.currentTarget.style.color = dimmedColor)}
+            onClick={(e) => {
+              e.preventDefault();
+              setImprint(!isImprint);
+            }}
+          >
+            {imprint.pageTitle}
+          </Anchor>
+        ) : null}
       </div>
     </div>
   );
