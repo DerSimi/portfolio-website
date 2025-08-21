@@ -10,7 +10,7 @@ Looking for a simple yet complete personal website focused on projects and publi
 
 ![Project Thumbnail](assets/diagonal_split.png)
 
-[Live Demo](https://rappenecker.me)
+[Live Demo](https://rappenecker.me/demo/)
 ## ⭐ Key Features
 - Clean and minimalist design, no unnecessary animations
 - Fully configurable
