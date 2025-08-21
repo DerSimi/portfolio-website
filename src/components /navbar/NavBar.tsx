@@ -72,11 +72,20 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
         }}
       >
         <Group justify="space-between" h="100%">
+          <Burger
+            opened={drawerOpened}
+            onClick={toggleDrawer}
+            hiddenFrom="sm"
+            // style={{ marginLeft: '8vw' }}
+            color={dimmedColor}
+          />
+
           <Group h="100%" gap={0} visibleFrom="sm" style={{ marginLeft: '8vw', paddingLeft: '0' }}>
             {items}
           </Group>
 
-          <Group visibleFrom="sm" style={{ marginRight: '8vw' }}>
+          {/* Dark mode icon for >=sm screens, with marginRight */}
+          <Group visibleFrom="sm" style={{ marginRight: '8vw', marginLeft: 'auto' }}>
             <ActionIcon
               onClick={() => toggleColorScheme()}
               variant="transparent"
@@ -92,15 +101,23 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
               )}
             </ActionIcon>
           </Group>
-
-          {/* Drawer on small screens */}
-          <Burger
-            opened={drawerOpened}
-            onClick={toggleDrawer}
-            hiddenFrom="sm"
-            style={{ marginRight: '8vw' }}
-            color={dimmedColor}
-          />
+          {/* Dark mode icon for <sm screens, no marginRight */}
+          <Group hiddenFrom="sm" style={{ marginLeft: 'auto' }}>
+            <ActionIcon
+              onClick={() => toggleColorScheme()}
+              variant="transparent"
+              size="auto"
+              aria-label="Toggle color scheme"
+              onMouseEnter={() => setIconHovered(true)}
+              onMouseLeave={() => setIconHovered(false)}
+            >
+              {colorScheme === 'dark' ? (
+                <IconSunFilled color={iconHovered ? defaultTextColor : dimmedColor} />
+              ) : (
+                <IconMoonFilled size={18} color={iconHovered ? defaultTextColor : dimmedColor} />
+              )}
+            </ActionIcon>
+          </Group>
         </Group>
       </header>
 
