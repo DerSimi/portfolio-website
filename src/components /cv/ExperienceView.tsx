@@ -13,7 +13,7 @@ export function ExperienceView() {
       <Group gap={8} mb="md">
         <IconBriefcase2Filled size={28} color={teal} style={{ marginBottom: 0 }} />
         <Title fz="h2" mb={0}>
-          Experience
+          {cv.experienceTitle}
         </Title>
       </Group>
 

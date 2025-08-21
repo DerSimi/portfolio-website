@@ -12,7 +12,7 @@ export type PublicationData = {
 
 export function Publications() {
   // sort descending by date
-  const sorted = publications
+  const sorted = publications.publications
     .slice()
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
@@ -30,12 +30,11 @@ export function Publications() {
   return (
     <>
       <Title order={2} fz="h1" mb="xl">
-        Publications
+        {publications.longTitle}
       </Title>
 
       <Text fz="h3" ta="left" mb="lg">
-        Here you can find a selection of my publications, including papers, articles, and other
-        academic works.
+        {publications.topDescription}
       </Text>
 
       {years.map((year) => (

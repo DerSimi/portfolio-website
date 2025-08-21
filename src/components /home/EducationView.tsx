@@ -6,7 +6,7 @@ export function EducationView() {
   return (
     <div>
       <Title fz="h3" mb="md">
-        Education
+        {home.educationTitle}
       </Title>
       <Stack gap="lg">
         {home.education.map((edu) => (

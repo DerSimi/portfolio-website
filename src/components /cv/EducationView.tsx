@@ -9,7 +9,7 @@ export function EducationView() {
       <Group gap={8} mb="md">
         <SchoolIcon style={{ fontSize: 28, color: 'teal', marginBottom: 0 }} />
         <Title fz="h2" mb={0}>
-          Education
+          {cv.educationTitle}
         </Title>
       </Group>
 

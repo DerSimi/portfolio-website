@@ -9,7 +9,7 @@ export function SkillView() {
       <Group gap={8} mb="md">
         <IconStarsFilled size={28} color="teal" style={{ marginBottom: 0 }} />
         <Title fz="h2" mb={0}>
-          Skills
+          {cv.skillsTitle}
         </Title>
       </Group>
 
@@ -28,7 +28,7 @@ export function SkillView() {
         ))}
 
         <Stack gap="md">
-          <Text size="md">Languages</Text>
+          <Text size="md">{cv.languagesTitle}</Text>
           {cv.languageSkills.map((lang) => (
             <div key={lang.name}>
               <Group justify="space-between" mb={4}>

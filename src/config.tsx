@@ -10,11 +10,15 @@ export const config = {
 
 // Home config
 export const home = {
+  pageTitle: 'Home',
+  aboutMeTitle: 'About me',
+  interestsTitle: 'Interests',
+  educationTitle: 'Education',
   name: 'Simon Rappenecker',
   avatarInitials: 'SR',
   // This will overwrite the avatarInitials if not empty
   imageLink: 'https://avatars.githubusercontent.com/u/16435889?v=4',
-  title: 'Machine Learning M. Sc.',
+  title: 'Master Student',
   // Multiple affiliations possible
   affiliations: [
     { affiliation: 'University of Tübingen', link: 'https://uni-tuebingen.de/en/' },
@@ -27,7 +31,7 @@ export const home = {
     github: 'https://github.com/DerSimi',
     google: '',
   },
-  aboutme: `My name is Simon and I am currently pursuing my M. Sc. in Machine Learning at the University of Tübingen, with an interest in Software Engineering, particularly emphasizing hardware-level programming. My fascination extends to the realm of Machine Learning as well. Feel free to check out my GitHub Profile or contact me via email.`,
+  aboutme: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.`,
   interests: ['Machine Learning', 'Robotics', 'Computer Vision', 'Mathematics'],
   education: [
     // This seems redundant but allows full flexibility what education to show
@@ -39,7 +43,7 @@ export const home = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
     {
-      primary: 'B.Sc. Computer Science',
+      primary: 'Computer Science B. Sc.',
       secondary: 'University of Tübingen',
       date: 'Oct. 2022 - Sept. 2025',
       description:
@@ -50,6 +54,9 @@ export const home = {
 
 //CV config
 export const cv = {
+  pageTitle: 'CV',
+  longTitle: 'Curriculum Vitae',
+  educationTitle: 'Education',
   education: [
     {
       primary: 'Machine Learning M. Sc.',
@@ -59,13 +66,14 @@ export const cv = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
     {
-      primary: 'B.Sc. Computer Science',
+      primary: 'Computer Science B.Sc.',
       secondary: 'University of Tübingen',
       date: 'Oct. 2022 - Sept. 2025',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
   ],
+  experienceTitle: 'Experience',
   experience: [
     {
       primary: 'Research Assistant',
@@ -82,10 +90,12 @@ export const cv = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
   ],
+  languagesTitle: 'Languages',
   languageSkills: [
     { name: 'English', level: 'Fluent', value: 95 },
     { name: 'German', level: 'Professional', value: 80 },
   ],
+  skillsTitle: 'Skills',
   skillCategories: [
     // You can create as many categories as wanted
     {
@@ -100,26 +110,47 @@ export const cv = {
 };
 
 // Publications config
-export const publications: PublicationData[] = [
-  {
-    imageUrl: '',
-    imageAlt: 'EXAM', // will be overriden if an image url is present
-    date: '2023-01-01',
-    citation: 'Doe, J. (2023). Example Publication Title. *Journal of Examples*.',
-    links: [
-      { href: 'https://example.com/pdf1', label: 'PDF' },
-      { href: 'https://example.com/code1', label: 'Code' },
-    ],
-  },
-  {
-    imageUrl: '',
-    imageAlt: 'EXAM',
-    date: '2023-01-01',
-    citation:
-      'Smith, A., & Lee, B. (2022). Another Study on Examples. *International Example Review*.',
-    links: [
-      { href: 'https://example.com/pdf2', label: 'PDF' },
-      { href: 'https://example.com/supp2', label: 'Supplement' },
-    ],
-  },
-];
+export const publications: {
+  pageTitle: string;
+  longTitle: string;
+  topDescription: string;
+  publications: PublicationData[];
+} = {
+  pageTitle: 'Publications',
+  longTitle: 'Publications',
+  topDescription:
+    'Here you can find a selection of my publications, including papers, articles, and other academic works.',
+  publications: [
+    {
+      imageUrl: '',
+      imageAlt: 'EXAM', // will be overriden if an image url is present
+      date: '2023-01-01',
+      citation: 'Doe, J. (2023). Example Publication Title. *Journal of Examples*.',
+      links: [
+        { href: 'https://example.com/pdf1', label: 'PDF' },
+        { href: 'https://example.com/code1', label: 'Code' },
+      ],
+    },
+    {
+      imageUrl: '',
+      imageAlt: 'EXAM',
+      date: '2023-01-01',
+      citation:
+        'Smith, A., & Lee, B. (2022). Another Study on Examples. *International Example Review*.',
+      links: [
+        { href: 'https://example.com/pdf2', label: 'PDF' },
+        { href: 'https://example.com/supp2', label: 'Supplement' },
+      ],
+    },
+  ],
+};
+
+// Projects config
+export const projects = {
+  pageTitle: 'Projects',
+};
+
+// Imprint config
+export const imprint = {
+  pageTitle: 'Imprint',
+};

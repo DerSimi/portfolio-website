@@ -18,9 +18,11 @@ interface NavBarProps {
   links: { label: string; href: string }[];
   activeLink: string;
   setActiveLink: Dispatch<SetStateAction<string>>;
+  isImprint: boolean;
+  setImprint: (value: boolean) => void;
 }
 
-export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
+export function NavBar({ links, activeLink, setActiveLink, isImprint, setImprint }: NavBarProps) {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const theme = useMantineTheme();
@@ -43,6 +45,9 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
       color = dimmedColor;
     }
 
+    if(isImprint)
+      color = dimmedColor;
+
     return (
       <a
         key={link.label}
@@ -52,6 +57,7 @@ export function NavBar({ links, activeLink, setActiveLink }: NavBarProps) {
         onClick={(event) => {
           event.preventDefault();
           setActiveLink(link.label);
+          setImprint(false);
           closeDrawer();
         }}
         onMouseEnter={() => setHoveredLink(link.label)}

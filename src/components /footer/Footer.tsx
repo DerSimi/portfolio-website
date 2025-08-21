@@ -1,7 +1,13 @@
 import { Anchor, useMantineColorScheme, useMantineTheme } from '@mantine/core';
+import { imprint } from '@/config';
 import classes from './Footer.module.css';
 
-export function Footer() {
+interface FooterProps {
+  isImprint: boolean;
+  setImprint: (value: boolean) => void;
+}
+
+export function Footer({ isImprint, setImprint }: FooterProps) {
   const theme = useMantineTheme();
   const { colorScheme } = useMantineColorScheme();
 
@@ -17,8 +23,12 @@ export function Footer() {
           style={{ marginLeft: 'auto', color: dimmedColor, textDecoration: 'none' }}
           onMouseOver={(e) => (e.currentTarget.style.color = defaultTextColor)}
           onMouseOut={(e) => (e.currentTarget.style.color = dimmedColor)}
+          onClick={(e) => {
+            e.preventDefault();
+            setImprint(!isImprint);
+          }}
         >
-          Imprint
+          {imprint.pageTitle}
         </Anchor>
       </div>
     </div>

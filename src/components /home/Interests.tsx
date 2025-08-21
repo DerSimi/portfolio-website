@@ -6,7 +6,7 @@ export function Interests() {
   return (
     <div>
       <Title fz="h3" mb="md">
-        Interests
+        {home.interestsTitle}
       </Title>
       <List spacing="xs" size="md" center icon={<IconChevronRight size={18} color="teal" />}>
         {home.interests.map((interest) => (
