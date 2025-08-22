@@ -3,7 +3,7 @@ import { PublicationData } from './pages/Publications';
 // General configuration
 export const config = {
   // Website title, static accross all pages
-  title: 'Simon Rappenecker',
+  title: 'Your Name',
   // Website icon, static accross all pages, use alternatively a local file, e. g. src/myicon.svg
   icon: 'https://avatars.githubusercontent.com/u/16435889?v=4',
 };
@@ -14,8 +14,8 @@ export const home = {
   aboutMeTitle: 'About me',
   interestsTitle: 'Interests',
   educationTitle: 'Education',
-  name: 'Simon Rappenecker',
-  avatarInitials: 'SR',
+  name: 'Your Name',
+  avatarInitials: 'YN',
   // This will overwrite the avatarInitials if not empty
   imageLink: 'https://avatars.githubusercontent.com/u/16435889?v=4',
   title: 'Master Student',
@@ -160,14 +160,14 @@ export const imprint = {
   // Not required in all countries.
   enableImprint: true,
   // Information part
-  informationTitle: 'Information according to § 5 TMG',
-  information: `Simon Rappenecker
-  Musterstraße 123
-  12345 Musterstadt
+  informationTitle: 'In compliance to § 5 TMG',
+  information: `Your Name
+  Example Street 123
+  12345 Example City
   Germany`,
   // Contact part
   // In Germany you need two ways of contact
   contactTitle: 'Contact',
-  email: 'simon@rappenecker.me',
+  email: 'yourname@example.com',
   phone: 'On request',
 };
