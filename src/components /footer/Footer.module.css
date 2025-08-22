@@ -9,15 +9,5 @@
   padding: var(--mantine-spacing-md) var(--mantine-spacing-md);
   padding-left: 0;
   padding-right: 0;
-
-  @media (max-width: $mantine-breakpoint-sm) {
-    flex-direction: column;
-  }
-}
-
-.links {
-  @media (max-width: $mantine-breakpoint-sm) {
-    margin-top: var(--mantine-spacing-lg);
-    margin-bottom: var(--mantine-spacing-sm);
-  }
+  min-width: 0;
 }

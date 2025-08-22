@@ -1,4 +1,5 @@
-import { Anchor, useMantineColorScheme, useMantineTheme } from '@mantine/core';
+import { IconBrandGithubFilled } from '@tabler/icons-react';
+import { Text, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { imprint } from '@/config';
 import classes from './Footer.module.css';
 
@@ -17,11 +18,32 @@ export function Footer({ isImprint, setImprint }: FooterProps) {
   return (
     <div className={classes.footer}>
       <div className={classes.inner}>
+        <a
+          href="https://github.com/DerSimi/portfolio-website"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-block',
+            color: dimmedColor,
+            textDecoration: 'none',
+            cursor: 'pointer',
+          }}
+          onMouseOver={(e) => (e.currentTarget.style.color = defaultTextColor)}
+          onMouseOut={(e) => (e.currentTarget.style.color = dimmedColor)}
+          aria-label="GitHub Repository"
+        >
+          <IconBrandGithubFilled style={{ verticalAlign: 'middle' }} />
+        </a>
+
         {imprint.enableImprint ? (
-          <Anchor
-            href="/imprint"
+          <Text
             size="md"
-            style={{ marginLeft: 'auto', color: dimmedColor, textDecoration: 'none' }}
+            style={{
+              marginLeft: 'auto',
+              color: dimmedColor,
+              textDecoration: 'none',
+              cursor: 'pointer',
+            }}
             onMouseOver={(e) => (e.currentTarget.style.color = defaultTextColor)}
             onMouseOut={(e) => (e.currentTarget.style.color = dimmedColor)}
             onClick={(e) => {
@@ -30,7 +52,7 @@ export function Footer({ isImprint, setImprint }: FooterProps) {
             }}
           >
             {imprint.pageTitle}
-          </Anchor>
+          </Text>
         ) : null}
       </div>
     </div>
