@@ -20,6 +20,8 @@ export function PersonalCard({ children, style, ...rest }: PersonalCardProps) {
       radius="md"
       style={{
         background: bg,
+        display: 'flex',
+        flexDirection: 'column',
         transition: 'box-shadow 0.2s',
         ...(style ?? {}),
       }}

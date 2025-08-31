@@ -7,9 +7,10 @@ import { config, cv, home, projects, publications } from './config';
 import { CV } from './pages/CV';
 import { Imprint } from './pages/Imprint';
 import { Publications } from './pages/Publications';
+import { Projects } from './pages/Projects';
 
 const HomeContent = () => <Home />;
-const ProjectsContent = () => <div>Projects Page Content</div>;
+const ProjectsContent = () => <Projects />;
 const PublicationsContent = () => <Publications />;
 const CVContent = () => <CV />;
 
