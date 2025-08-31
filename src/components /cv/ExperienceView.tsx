@@ -17,10 +17,11 @@ export function ExperienceView() {
         </Title>
       </Group>
 
-      <Timeline active={cv.experience.length} color={teal} lineWidth={2}>
+  <Timeline active={cv.experience.length} color={teal} lineWidth={2}>
         {cv.experience.map((entry, index) => (
           <Timeline.Item
             key={index}
+    lineVariant="dashed"
             bullet={
               <div
                 style={{

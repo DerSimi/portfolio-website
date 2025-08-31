@@ -1,4 +1,4 @@
-import { Flex, Stack, Text, Title } from '@mantine/core';
+import { Badge, Flex, Stack, Text, Title } from '@mantine/core';
 import { PersonalCard } from '../PersonalCard';
 
 type CvEntryProps = {
@@ -6,9 +6,10 @@ type CvEntryProps = {
   secondary: string;
   date: string;
   description: string;
+  current?: boolean;
 };
 
-export function CvEntry({ primary, secondary, date, description }: CvEntryProps) {
+export function CvEntry({ primary, secondary, date, description, current }: CvEntryProps) {
   return (
     <PersonalCard>
       <Flex
@@ -21,9 +22,11 @@ export function CvEntry({ primary, secondary, date, description }: CvEntryProps)
           <Text c="dimmed">{secondary}</Text>
         </Stack>
 
-        <Text size="sm" c="dimmed" style={{ flexShrink: 0 }}>
-          {date}
-        </Text>
+        <Stack gap={4} align="flex-end" style={{ flexShrink: 0 }}>
+          <Text size="sm" c="dimmed">
+            {date}
+          </Text>
+        </Stack>
       </Flex>
 
       <Text size="md" mt="md">{description}</Text>
