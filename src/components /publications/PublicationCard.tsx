@@ -45,7 +45,6 @@ export function PublicationCard({
             key={link.label}
             size="md"
             fw={500}
-            lh="1.625"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -63,7 +62,7 @@ export function PublicationCard({
           {renderImage()}
 
           <Stack gap="xs" style={{ flex: 1 }}>
-            <Text component="p" size="lg">
+            <Text fz={"h4"} component="p" size="lg">
               {citation}
             </Text>
 

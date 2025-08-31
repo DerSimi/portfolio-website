@@ -33,7 +33,7 @@ export function Publications() {
         {publications.longTitle}
       </Title>
 
-      <Text fz="h3" ta="left" mb="lg">
+      <Text fz="md" ta="left" mb="lg">
         {publications.topDescription}
       </Text>
 
