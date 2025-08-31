@@ -21,7 +21,7 @@ export function ExperienceView() {
         {cv.experience.map((entry, index) => (
           <Timeline.Item
             key={index}
-    lineVariant="dashed"
+            lineVariant={entry.current ? 'dashed' : 'solid'}
             bullet={
               <div
                 style={{
