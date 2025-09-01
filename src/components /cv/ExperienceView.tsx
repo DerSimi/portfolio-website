@@ -1,5 +1,5 @@
 import { IconBriefcase2Filled } from '@tabler/icons-react';
-import { Group, Timeline, Title, useMantineTheme } from '@mantine/core';
+import { Group, Paper, Timeline, Title, useMantineTheme } from '@mantine/core';
 import { CvEntry } from '@/components /cv/CvHelper';
 import { cv as cvConfig } from '@/config/pages/cv';
 import { cv as cvTranslation } from '@/config/translation';
@@ -9,6 +9,8 @@ export function ExperienceView() {
   // Hardcoded teal for the timeline. Can not use the css keyword teal within
   // the timeline because mantine will use a different color.
   const teal = '#008080';
+
+  console.log(theme.colors.teal, "hihihihi")
 
   return (
     <>
@@ -24,17 +26,7 @@ export function ExperienceView() {
           <Timeline.Item
             key={index}
             lineVariant={entry.current ? 'dashed' : 'solid'}
-            bullet={
-              <div
-                style={{
-                  width: 18,
-                  height: 18,
-                  borderRadius: '50%',
-                  background: teal,
-                  border: `5px solid ${teal}`,
-                }}
-              />
-            }
+            bullet={<Paper w="100%" h="100%" radius="50%" bg={theme.other.colors.accentColor}></Paper>}
           >
             <CvEntry {...entry} />
           </Timeline.Item>
