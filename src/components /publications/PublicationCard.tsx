@@ -1,20 +1,27 @@
 import { Anchor, Box, Group, Image, Paper, Stack, Text, useMantineTheme } from '@mantine/core';
 import { PersonalCard } from '../PersonalCard';
 
+type PublicationLink = { href: string; label: string };
+
+interface PublicationCardProps {
+  imageUrl?: string;
+  imageAlt?: string;
+  citation?: string;
+  links?: PublicationLink[];
+}
+
 export function PublicationCard({
-  imageUrl = '',
-  imageAlt = 'ICML',
-  citation = 'N. Sirmpilatze, et al. (2023). "A Novel Approach to Sensor Fusion for Robust Localization." *Journal of Field Robotics*',
-  links = [
-    { href: 'www.link.com', label: 'PDF' },
-    { href: 'www.link.com', label: 'Code' },
-  ],
-}) {
+  imageUrl,
+  imageAlt,
+  citation,
+  links,
+}: PublicationCardProps) {
   const theme = useMantineTheme();
-  
+  const linkItems = links ?? [];
+
   const renderImage = () =>
     imageUrl ? (
-      <Image src={imageUrl} alt={imageAlt} w={96} h={96} radius="md" style={{ flexShrink: 0 }} />
+      <Image src={imageUrl} alt={imageAlt ?? ''} w={96} h={96} radius="md" style={{ flexShrink: 0 }} />
     ) : (
       <Paper
         w={96}
@@ -25,15 +32,15 @@ export function PublicationCard({
         style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexShrink: 0 }}
       >
         <Text fz={30} fw="bolder" ta="center" c="white">
-          {imageAlt}
+          {imageAlt ?? ''}
         </Text>
       </Paper>
     );
 
   const renderLinks = () =>
-    links.length > 0 && (
+    linkItems.length > 0 && (
       <Group gap="md" wrap="wrap">
-        {links.map((link) => (
+        {linkItems.map((link) => (
           <Anchor
             href={link.href}
             style={{ color: theme.other.colors.accentColor }}
