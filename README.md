@@ -32,7 +32,7 @@ Once all dependencies are installed, start the development server and open the l
 npm run dev
 ```
 
-Now it's time to make it your own! Enter your personal data in [`src/config.tsx`](src/config.tsx).
+Now it's time to make it your own! You can configure everything in [`src/config`](src/config.tsx).
 
 ## 🚀 Deployment
 To deploy the website on a static webspace (e.g., Apache or Nginx), first build the project:
