@@ -10,6 +10,7 @@ import { Imprint } from './pages/Imprint';
 import { Projects } from './pages/Projects';
 import { Publications } from './pages/Publications';
 import { publications as publicationsConfig } from './config/pages/publications';
+import { projects as projectsConfig } from './config/pages/projects';
 
 const HomeContent = () => <Home />;
 const ProjectsContent = () => <Projects />;
@@ -24,10 +25,11 @@ const contentMap: Record<string, ReactElement> = {
 };
 
 const hasPublications = (publicationsConfig.publications ?? []).length > 0;
+const hasProjects = (projectsConfig.projects ?? []).length > 0;
 
 const navLinks = [
   { label: navbar.home, href: '#' },
-  { label: navbar.projects, href: '#' },
+  ...(hasProjects ? [{ label: navbar.projects, href: '#' }] : []),
   ...(hasPublications ? [{ label: navbar.publications, href: '#' }] : []),
   { label: navbar.cv, href: '#' },
 ];

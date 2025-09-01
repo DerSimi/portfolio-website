@@ -1,6 +1,7 @@
 import { PublicationData } from '@/pages/Publications';
 
 // Publications config
+//Note: If you don't have any publications, the tab is disabled
 export const publications: {
   topDescription: string;
   publications: PublicationData[];

@@ -1,4 +1,5 @@
 // Projects config
+//Note: If you don't have any projects, the tab is disabled
 export const projects = {
   projects: [
     {

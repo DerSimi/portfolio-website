@@ -6,27 +6,31 @@ import { cv as cvTranslation } from '@/config/translation';
 
 export function ExperienceView() {
   const theme = useMantineTheme();
-  // Hardcoded teal for the timeline. Can not use the css keyword teal within
-  // the timeline because mantine will use a different color.
-  const teal = '#008080';
-
-  console.log(theme.colors.teal, "hihihihi")
-
   return (
     <>
       <Group gap={8} mb="md">
-        <IconBriefcase2Filled size={28} color={theme.other.colors.accentColor} style={{ marginBottom: 0 }} />
+        <IconBriefcase2Filled
+          size={28}
+          color={theme.other.colors.accentColor}
+          style={{ marginBottom: 0 }}
+        />
         <Title fz="h2" mb={0}>
           {cvTranslation.experience}
         </Title>
       </Group>
 
-      <Timeline active={cvConfig.experience.length} color={theme.other.colors.accentColor} lineWidth={2}>
+      <Timeline
+        active={cvConfig.experience.length}
+        color={theme.other.colors.accentColor}
+        lineWidth={2}
+      >
         {cvConfig.experience.map((entry, index) => (
           <Timeline.Item
             key={index}
             lineVariant={entry.current ? 'dashed' : 'solid'}
-            bullet={<Paper w="100%" h="100%" radius="50%" bg={theme.other.colors.accentColor}></Paper>}
+            bullet={
+              <Paper w="100%" h="100%" radius="50%" bg={theme.other.colors.accentColor}></Paper>
+            }
           >
             <CvEntry {...entry} />
           </Timeline.Item>
