@@ -29,7 +29,7 @@ export function Publications() {
 
   return (
     <>
-      <Title order={2} fz="h1" mb="xl">
+      <Title fz="h1" mb="xl">
         {publications.longTitle}
       </Title>
 

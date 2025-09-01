@@ -188,7 +188,7 @@ export const projects = {
       ],
       techStack: ['ROS', 'Gazebo', 'Python'],
     },
-        {
+    {
       title: 'Robotics Simulation',
       description:
         'A personal website built with React and Mantine to showcase my portfolio, CV, and publications.',
@@ -199,7 +199,40 @@ export const projects = {
       ],
       techStack: ['ROS', 'Gazebo', 'Python'],
     },
-        {
+    {
+      title: 'Robotics Simulation',
+      description:
+        'A simulation environment for testing robotic algorithms adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. ',
+      imageUrl: '',
+      imageAlt: 'Robotics Simulation',
+      links: [
+        { href: 'www.link.com', label: 'PDF' },
+      ],
+      techStack: ['ROS', 'Gazebo', 'Python'],
+    },
+    {
+      title: 'Robotics Simulation',
+      description:
+        'A simulation environment for testing robotic algorithms adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. ',
+      imageUrl: '',
+      imageAlt: 'Robotics Simulation',
+      links: [
+        { href: 'www.link.com', label: 'PDF' },
+      ],
+      techStack: ['ROS', 'Gazebo', 'Python'],
+    },
+    {
+      title: 'Robotics Simulation',
+      description:
+        'A simulation environment for testing robotic algorithms adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. ',
+      imageUrl: '',
+      imageAlt: 'Robotics Simulation',
+      links: [
+        { href: 'www.link.com', label: 'PDF' },
+      ],
+      techStack: ['ROS', 'Gazebo', 'Python'],
+    },
+    {
       title: 'Robotics Simulation',
       description:
         'A simulation environment for testing robotic algorithms adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. ',

@@ -25,13 +25,18 @@ export function ProjectCard({
     const dimmedColor = colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6];
     const headerBorder = colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3];
 
-    const IMAGE_HEIGHT = 250;
+    const IMAGE_HEIGHT = 200;
 
     return (
-        <PersonalCard style={{ display: 'flex', flexDirection: 'column', width: '100%', minWidth: 280, maxWidth: 480 }}>
+        <PersonalCard style={{ width: 320, height: 500 }}>
             <Card.Section style={{ borderBottom: `1px solid ${headerBorder}` }}>
                 {imageUrl ? (
-                    <Image src={imageUrl} alt={imageAlt} height={IMAGE_HEIGHT} />
+                    <Image
+                        src={imageUrl}
+                        alt={imageAlt}
+                        fit="cover"
+                        style={{ width: '100%', height: IMAGE_HEIGHT, objectFit: 'cover' }}
+                    />
                 ) : (
                     <Box style={{ height: IMAGE_HEIGHT, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
                         <Title fz="h1" c="teal">
@@ -42,9 +47,9 @@ export function ProjectCard({
             </Card.Section>
 
             <Stack gap="sm" style={{ flex: 1, minHeight: 0 }} mt="md">
-                <Title fz="h2">{title}</Title>
+                <Title fz="h2" style={{ wordBreak: 'break-word' }}>{title}</Title>
                 {!!techStack?.length && (
-                    <Group gap="xs" wrap="wrap">
+                    <Group gap="xs" wrap="wrap" style={{ overflow: 'hidden' }}>
                         {techStack.map((tech) => (
                             <Badge key={tech} color="teal" variant="light">
                                 {tech}
@@ -53,7 +58,7 @@ export function ProjectCard({
                     </Group>
                 )}
 
-                <Text size="h3">
+                <Text size="h3" style={{ wordBreak: 'break-word' }}>
                     {description}
                 </Text>
                 <Box style={{ flex: 1 }} />
@@ -79,8 +84,6 @@ export function ProjectCard({
                         key={`${link.href}-${link.label}`}
                         component="a"
                         href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         color="teal"
                         radius="md"
                     >
