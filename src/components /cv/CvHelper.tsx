@@ -5,11 +5,10 @@ type CvEntryProps = {
   primary: string;
   secondary: string;
   date: string;
-  description: string;
-  current?: boolean;
+  description: string
 };
 
-export function CvEntry({ primary, secondary, date, description, current }: CvEntryProps) {
+export function CvEntry({ primary, secondary, date, description }: CvEntryProps) {
   return (
     <PersonalCard>
       <Flex
