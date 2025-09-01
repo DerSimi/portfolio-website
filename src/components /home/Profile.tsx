@@ -17,7 +17,7 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import { home } from '@/config';
+import { home } from '@/config/pages/home';
 
 export function Profile() {
   const theme = useMantineTheme();
@@ -64,12 +64,7 @@ export function Profile() {
       <Group gap="md" justify="center">
         {home.socialLinks.email && (
           <Tooltip label="Email me" position="top" withArrow>
-            <ActionIcon
-              component="a"
-              href={home.socialLinks.email}
-              size="lg"
-              variant="transparent"
-            >
+            <ActionIcon component="a" href={home.socialLinks.email} size="lg" variant="transparent">
               <IconMailFilled size={30} color={iconColor} />
             </ActionIcon>
           </Tooltip>

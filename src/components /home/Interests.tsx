@@ -1,15 +1,16 @@
 import { IconChevronRight } from '@tabler/icons-react';
 import { List, Title } from '@mantine/core';
-import { home } from '@/config';
+import { home as homeConfig } from '@/config/pages/home';
+import { home as homeTranslation } from '@/config/translation';
 
 export function Interests() {
   return (
     <div>
       <Title fz="h3" mb="md">
-        {home.interestsTitle}
+        {homeTranslation.interests}
       </Title>
       <List spacing="xs" size="md" center icon={<IconChevronRight size={18} color="teal" />}>
-        {home.interests.map((interest) => (
+        {homeConfig.interests.map((interest) => (
           <List.Item key={interest}>{interest}</List.Item>
         ))}
       </List>

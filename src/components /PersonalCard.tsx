@@ -1,6 +1,6 @@
-import { Card, useMantineTheme, useMantineColorScheme } from '@mantine/core';
-import type { CardProps } from '@mantine/core'; // Importiere CardProps für Typsicherheit
 import type { PropsWithChildren } from 'react';
+import { Card, useMantineColorScheme, useMantineTheme } from '@mantine/core';
+import type { CardProps } from '@mantine/core'; // Importiere CardProps für Typsicherheit
 
 type PersonalCardProps = PropsWithChildren<CardProps>;
 
@@ -9,9 +9,7 @@ export function PersonalCard({ children, style, ...rest }: PersonalCardProps) {
   const { colorScheme } = useMantineColorScheme();
 
   const bg =
-    colorScheme === 'dark'
-      ? theme.other.colors.dark.boxBg
-      : theme.other.colors.light.boxBg;
+    colorScheme === 'dark' ? theme.other.colors.dark.boxBg : theme.other.colors.light.boxBg;
 
   return (
     <Card
@@ -25,8 +23,8 @@ export function PersonalCard({ children, style, ...rest }: PersonalCardProps) {
         transition: 'box-shadow 0.2s',
         ...(style ?? {}),
       }}
-      onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.18)')}
-      onMouseLeave={e => (e.currentTarget.style.boxShadow = '')}
+      onMouseEnter={(e) => (e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.18)')}
+      onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '')}
       {...rest}
     >
       {children}

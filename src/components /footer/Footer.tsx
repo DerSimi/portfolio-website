@@ -1,6 +1,7 @@
 import { IconBrandGithubFilled } from '@tabler/icons-react';
 import { Text, useMantineColorScheme, useMantineTheme } from '@mantine/core';
-import { imprint } from '@/config';
+import { imprint as imprintConfig } from '@/config/pages/imprint';
+import { imprint as imprintTranslation } from '@/config/translation';
 import classes from './Footer.module.css';
 
 interface FooterProps {
@@ -35,7 +36,7 @@ export function Footer({ isImprint, setImprint }: FooterProps) {
           <IconBrandGithubFilled style={{ verticalAlign: 'middle' }} />
         </a>
 
-        {imprint.enableImprint ? (
+        {imprintConfig.enableImprint ? (
           <Text
             size="md"
             style={{
@@ -51,7 +52,7 @@ export function Footer({ isImprint, setImprint }: FooterProps) {
               setImprint(!isImprint);
             }}
           >
-            {imprint.pageTitle}
+            {imprintTranslation.longTitle}
           </Text>
         ) : null}
       </div>

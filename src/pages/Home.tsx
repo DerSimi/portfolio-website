@@ -17,7 +17,7 @@ export function Home() {
           alignSelf: 'flex-start',
           marginTop: '-1rem',
           display: 'flex',
-          justifyContent: isSmUp ? 'flex-start' : 'center'
+          justifyContent: isSmUp ? 'flex-start' : 'center',
         }}
       >
         <Profile />

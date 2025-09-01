@@ -1,5 +1,8 @@
 import { createTheme } from '@mantine/core';
 
+// Here you can customize the Website theme,
+// currently it is online possible to change the box colors in light and dark mode, as well as the NavBar color
+
 export const theme = createTheme({
   other: {
     colors: {

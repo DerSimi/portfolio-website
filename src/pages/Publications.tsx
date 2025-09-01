@@ -1,6 +1,7 @@
 import { Stack, Text, Title } from '@mantine/core';
 import { PublicationCard } from '@/components /publications/PublicationCard';
-import { publications } from '@/config';
+import { publications as publicationsConfig } from '@/config/pages/publications';
+import { publications as publicationsTranslation } from '@/config/translation';
 
 export type PublicationData = {
   imageUrl: string;
@@ -12,7 +13,7 @@ export type PublicationData = {
 
 export function Publications() {
   // sort descending by date
-  const sorted = publications.publications
+  const sorted = publicationsConfig.publications
     .slice()
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
@@ -29,12 +30,12 @@ export function Publications() {
 
   return (
     <>
-      <Title fz="h1" mb="xl">
-        {publications.longTitle}
+      <Title order={2} fz="h1" mb="xl">
+        {publicationsTranslation.longTitle}
       </Title>
 
       <Text fz="md" ta="left" mb="lg">
-        {publications.topDescription}
+        {publicationsConfig.topDescription}
       </Text>
 
       {years.map((year) => (

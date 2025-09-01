@@ -1,18 +1,21 @@
 import { Flex, Text, Title } from '@mantine/core';
-import { projects } from '@/config';
 import { ProjectCard } from '@/components /projects/ProjectCard';
+import { projects as projectsConfig } from '@/config/pages/projects';
+import { projects as projectsTranslation } from '@/config/translation';
 
 export function Projects() {
   return (
     <>
-      <Title fz="h1" mb="xl">
-        {projects.pageTitle}
+      <Title order={2} fz="h1" mb="xl">
+        {projectsTranslation.longTitle}
       </Title>
+
       <Text fz="md" ta="left" mb="lg">
-        {projects.longTitle}
+        {projectsTranslation.topDescription}
       </Text>
-      <Flex gap="xl" wrap="wrap" align={'flex-start'}>
-        {projects.projects.map((project, idx) => (
+
+      <Flex gap="xl" wrap="wrap" align="flex-start" pt="md">
+        {projectsConfig.projects.map((project, idx) => (
           <ProjectCard
             key={`project-${idx}`}
             title={project.title}

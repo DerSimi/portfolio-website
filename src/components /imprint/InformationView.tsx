@@ -1,5 +1,5 @@
 import { Stack, Text, Title } from '@mantine/core';
-import { imprint } from '@/config';
+import { imprint } from '@/config/pages/imprint';
 
 export function InformationView() {
   return (

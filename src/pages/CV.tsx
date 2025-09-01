@@ -1,14 +1,19 @@
-import { Box, Grid, Stack, Title } from '@mantine/core';
+import { Box, Grid, Text, Title } from '@mantine/core';
 import { EducationView } from '@/components /cv/EducationView';
 import { ExperienceView } from '@/components /cv/ExperienceView';
 import { SkillView } from '@/components /cv/SkillView';
+import { cv as cvTranslation } from '@/config/translation';
 
 export function CV() {
   return (
     <Box>
       <Title order={2} fz="h1" mb="xl">
-        Curriculum Vitae
+        {cvTranslation.longTitle}
       </Title>
+
+      <Text fz="md" ta="left" mb="lg">
+        {cvTranslation.topDescription}
+      </Text>
 
       <Grid gutter="xl">
         <Grid.Col span={{ base: 12, md: 8 }} order={{ base: 1, md: 1 }}>

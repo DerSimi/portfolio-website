@@ -45,8 +45,7 @@ export function NavBar({ links, activeLink, setActiveLink, isImprint, setImprint
       color = dimmedColor;
     }
 
-    if(isImprint)
-      color = dimmedColor;
+    if (isImprint) color = dimmedColor;
 
     return (
       <a

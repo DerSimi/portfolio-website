@@ -3,11 +3,12 @@ import { Box, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { NavBar } from '@/components /navbar/NavBar';
 import { Home } from '@/pages/Home';
 import { Footer } from './components /footer/Footer';
-import { config, cv, home, projects, publications } from './config';
+import { config as htmlTitle} from './config/html_title';
+import { navbar } from './config/translation';
 import { CV } from './pages/CV';
 import { Imprint } from './pages/Imprint';
-import { Publications } from './pages/Publications';
 import { Projects } from './pages/Projects';
+import { Publications } from './pages/Publications';
 
 const HomeContent = () => <Home />;
 const ProjectsContent = () => <Projects />;
@@ -22,10 +23,10 @@ const contentMap: Record<string, ReactElement> = {
 };
 
 const navLinks = [
-  { label: home.pageTitle, href: '#' },
-  { label: projects.pageTitle, href: '#' },
-  { label: publications.pageTitle, href: '#' },
-  { label: cv.pageTitle, href: '#' },
+  { label: navbar.home, href: '#' },
+  { label: navbar.projects, href: '#' },
+  { label: navbar.publications, href: '#' },
+  { label: navbar.cv, href: '#' },
 ];
 
 export function RootPage() {
@@ -35,7 +36,7 @@ export function RootPage() {
   const theme = useMantineTheme();
 
   useEffect(() => {
-    document.title = config.title;
+    document.title = htmlTitle.title;
 
     let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement | null;
 
@@ -45,7 +46,7 @@ export function RootPage() {
       document.head.appendChild(link);
     }
 
-    link.href = config.icon;
+    link.href = htmlTitle.icon;
   }, []);
 
   return (

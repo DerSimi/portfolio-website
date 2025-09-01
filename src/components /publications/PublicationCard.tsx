@@ -12,14 +12,7 @@ export function PublicationCard({
 }) {
   const renderImage = () =>
     imageUrl ? (
-      <Image
-        src={imageUrl}
-        alt={imageAlt}
-        w={96}
-        h={96}
-        radius="md"
-        style={{ flexShrink: 0 }}
-      />
+      <Image src={imageUrl} alt={imageAlt} w={96} h={96} radius="md" style={{ flexShrink: 0 }} />
     ) : (
       <Paper
         w={96}
@@ -62,7 +55,7 @@ export function PublicationCard({
           {renderImage()}
 
           <Stack gap="xs" style={{ flex: 1 }}>
-            <Text fz={"h4"} component="p" size="lg">
+            <Text fz={'h4'} component="p" size="lg">
               {citation}
             </Text>
 

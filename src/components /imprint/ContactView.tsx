@@ -1,12 +1,13 @@
 import { IconAt, IconPhone } from '@tabler/icons-react';
 import { Group, Stack, Text, ThemeIcon, Title } from '@mantine/core';
-import { imprint } from '@/config';
+import { imprint as imprintConfig } from '@/config/pages/imprint';
+import { imprint as imprintTranslation } from '@/config/translation';
 
 export function ContactView() {
   return (
     <Stack gap="md">
-      <Title fz="h2">{imprint.contactTitle}</Title>
-      
+      <Title fz="h2">{imprintTranslation.contact}</Title>
+
       <Stack gap="xs">
         <Group gap="xs">
           <ThemeIcon variant="light" size="sm" color="teal">
@@ -14,17 +15,17 @@ export function ContactView() {
           </ThemeIcon>
           <Text
             component="a"
-            href={`mailto:${imprint.email}`}
+            href={`mailto:${imprintConfig.email}`}
             style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}
           >
-            {imprint.email}
+            {imprintConfig.email}
           </Text>
         </Group>
         <Group gap="xs">
           <ThemeIcon variant="light" size="sm" color="teal">
             <IconPhone style={{ width: '70%', height: '70%' }} />
           </ThemeIcon>
-          <Text>{imprint.phone}</Text>
+          <Text>{imprintConfig.phone}</Text>
         </Group>
       </Stack>
     </Stack>
