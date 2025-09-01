@@ -39,7 +39,7 @@ export function ProjectCard({
   const dimmedColor = colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6];
   const headerBorder = colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3];
 
-  const IMAGE_HEIGHT = 200;
+  const imageHeight = 200;
 
   return (
     <PersonalCard style={{ width: 320, height: 500 }}>
@@ -49,19 +49,19 @@ export function ProjectCard({
             src={imageUrl}
             alt={imageAlt}
             fit="cover"
-            style={{ width: '100%', height: IMAGE_HEIGHT, objectFit: 'cover' }}
+            style={{ width: '100%', height: imageHeight, objectFit: 'cover' }}
           />
         ) : (
           <Box
             style={{
-              height: IMAGE_HEIGHT,
+              height: imageHeight,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               textAlign: 'center',
             }}
           >
-            <Title fz="h1" c="teal">
+            <Title fz="h1" c={theme.other.colors.accentColor}>
               {imageAlt}
             </Title>
           </Box>
@@ -75,7 +75,7 @@ export function ProjectCard({
         {!!techStack?.length && (
           <Group gap="xs" wrap="wrap" style={{ overflow: 'hidden' }}>
             {techStack.map((tech) => (
-              <Badge key={tech} color="teal" variant="light">
+              <Badge key={tech} color={theme.other.colors.accentColor} variant="light">
                 {tech}
               </Badge>
             ))}
@@ -101,7 +101,7 @@ export function ProjectCard({
             key={`${link.href}-${link.label}`}
             component="a"
             href={link.href}
-            color="teal"
+            color={theme.other.colors.accentColor}
             radius="md"
           >
             {link.label}

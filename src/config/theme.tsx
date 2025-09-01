@@ -6,6 +6,8 @@ import { createTheme } from '@mantine/core';
 export const theme = createTheme({
   other: {
     colors: {
+      accentColor: 'teal',
+
       // Light Mode
       light: {
         // Color of the content space

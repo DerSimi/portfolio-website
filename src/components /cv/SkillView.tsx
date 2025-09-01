@@ -1,14 +1,15 @@
 import { IconStarsFilled } from '@tabler/icons-react';
-import { Badge, Group, Progress, Stack, Text, Title } from '@mantine/core';
+import { Badge, Group, Progress, Stack, Text, Title, useMantineTheme } from '@mantine/core';
 import { cv as cvConfig } from '@/config/pages/cv';
 import { cv as cvTranslation } from '@/config/translation';
 import { PersonalCard } from '../PersonalCard';
 
 export function SkillView() {
+  const theme = useMantineTheme();
   return (
     <>
       <Group gap={8} mb="md">
-        <IconStarsFilled size={28} color="teal" style={{ marginBottom: 0 }} />
+        <IconStarsFilled size={28} color={theme.other.colors.accentColor} style={{ marginBottom: 0 }} />
         <Title fz="h2" mb={0}>
           {cvTranslation.skills}
         </Title>
@@ -20,7 +21,7 @@ export function SkillView() {
               <Text size="md">{category.label}</Text>
               <Group gap={7}>
                 {category.skills.map((skill) => (
-                  <Badge key={skill} variant="light" color="teal" size="md" radius="sm">
+                  <Badge key={skill} variant="light" color={theme.other.colors.accentColor} size="md" radius="sm">
                     {skill}
                   </Badge>
                 ))}
@@ -38,7 +39,7 @@ export function SkillView() {
                     {lang.level}
                   </Text>
                 </Group>
-                <Progress value={lang.value} color="teal" />
+                <Progress value={lang.value} color={theme.other.colors.accentColor} />
               </div>
             ))}
           </Stack>

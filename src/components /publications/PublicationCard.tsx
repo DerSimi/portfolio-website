@@ -1,4 +1,4 @@
-import { Anchor, Box, Group, Image, Paper, Stack, Text } from '@mantine/core';
+import { Anchor, Box, Group, Image, Paper, Stack, Text, useMantineTheme } from '@mantine/core';
 import { PersonalCard } from '../PersonalCard';
 
 export function PublicationCard({
@@ -10,6 +10,8 @@ export function PublicationCard({
     { href: 'www.link.com', label: 'Code' },
   ],
 }) {
+  const theme = useMantineTheme();
+  
   const renderImage = () =>
     imageUrl ? (
       <Image src={imageUrl} alt={imageAlt} w={96} h={96} radius="md" style={{ flexShrink: 0 }} />
@@ -19,7 +21,7 @@ export function PublicationCard({
         h={96}
         radius="md"
         shadow="false"
-        bg="teal"
+        bg={theme.other.colors.accentColor}
         style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexShrink: 0 }}
       >
         <Text fz={30} fw="bolder" ta="center" c="white">
@@ -34,7 +36,7 @@ export function PublicationCard({
         {links.map((link) => (
           <Anchor
             href={link.href}
-            style={{ color: 'teal' }}
+            style={{ color: theme.other.colors.accentColor }}
             key={link.label}
             size="md"
             fw={500}

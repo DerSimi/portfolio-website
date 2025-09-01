@@ -32,7 +32,7 @@ export function Profile() {
       <Avatar
         src={home.imageLink && home.imageLink !== '' ? home.imageLink : null}
         alt="User avatar"
-        color="teal"
+        color={theme.other.colors.accentColor}
         size={160}
         radius={10}
         mx="auto"
@@ -53,7 +53,7 @@ export function Profile() {
       <Box mt="xs" mb="xs">
         {home.affiliations.map(({ affiliation, link }, index) => (
           <Text key={index} ta="center" size="sm" fw="bolder">
-            <a href={link} style={{ color: 'teal', textDecoration: 'none' }}>
+            <a href={link} style={{ color: theme.other.colors.accentColor, textDecoration: 'none' }}>
               {affiliation}
             </a>
           </Text>
