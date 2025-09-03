@@ -3,6 +3,7 @@ import { EducationView } from '@/components /cv/EducationView';
 import { ExperienceView } from '@/components /cv/ExperienceView';
 import { SkillView } from '@/components /cv/SkillView';
 import { cv as cvTranslation } from '@/config/translation';
+import {cv as cvConfig} from '@/config/pages/cv';
 
 export function CV() {
   return (
@@ -12,7 +13,7 @@ export function CV() {
       </Title>
 
       <Text fz="md" ta="left" mb="lg">
-        {cvTranslation.topDescription}
+        {cvConfig.topDescription}
       </Text>
 
       <Grid gutter="xl">

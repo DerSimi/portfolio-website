@@ -1,11 +1,12 @@
 //CV config
 export const cv = {
+  topDescription: 'Here is my CV, detailing my professional experience and education.',
   education: [
     {
       primary: 'Machine Learning M. Sc.',
       secondary: 'University of Tübingen',
       date: 'Oct. 2025 - Present',
-      description:
+      description: // For line breaks, feel free to use \n here!
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.',
     },
     {

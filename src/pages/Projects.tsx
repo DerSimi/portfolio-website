@@ -11,7 +11,7 @@ export function Projects() {
       </Title>
 
       <Text fz="md" ta="left" mb="lg">
-        {projectsTranslation.topDescription}
+        {projectsConfig.topDescription}
       </Text>
 
       <Flex gap="xl" wrap="wrap" align="flex-start" pt="md">

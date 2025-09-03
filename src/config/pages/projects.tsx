@@ -1,6 +1,7 @@
 // Projects config
 //Note: If you don't have any projects, the tab is disabled
 export const projects = {
+  topDescription: 'Here are some of the projects I have worked on.', // Keep this empty to disable
   projects: [
     {
       title: 'Portfolio Site',
