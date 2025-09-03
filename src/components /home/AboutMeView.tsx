@@ -9,7 +9,12 @@ export function AboutMeView() {
         {homeTranslation.about_me}
       </Title>
       <Text fz="md" mb="md" style={{ maxWidth: '64rem', width: '100%' }}>
-        {homeConfig.aboutme}
+        {homeConfig.aboutme.split('\n').map((line, idx, arr) => (
+          <span key={idx}>
+            {line}
+            {idx < arr.length - 1 && <br />}
+          </span>
+        ))}
       </Text>
     </>
   );

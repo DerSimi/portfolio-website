@@ -25,7 +25,12 @@ export function CvEntry({ primary, secondary, date, description }: CvEntryProps)
       </Flex>
 
       <Text size="md" mt="md">
-        {description}
+        {description.split('\n').map((line, idx) => (
+          <span key={idx}>
+            {line}
+            {idx < description.split('\n').length - 1 && <br />}
+          </span>
+        ))}
       </Text>
     </PersonalCard>
   );
