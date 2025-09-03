@@ -6,6 +6,7 @@ import { cv as cvTranslation } from '@/config/translation';
 
 export function ExperienceView() {
   const theme = useMantineTheme();
+  const experiences = cvConfig.experience;
   return (
     <>
       <Group gap={8} mb="md">
@@ -19,23 +20,27 @@ export function ExperienceView() {
         </Title>
       </Group>
 
-      <Timeline
-        active={cvConfig.experience.length}
-        color={theme.other.colors.accentColor}
-        lineWidth={2}
-      >
-        {cvConfig.experience.map((entry, index) => (
-          <Timeline.Item
-            key={index}
-            lineVariant={entry.current ? 'dashed' : 'solid'}
-            bullet={
-              <Paper w="100%" h="100%" radius="50%" bg={theme.other.colors.accentColor}></Paper>
-            }
-          >
-            <CvEntry {...entry} />
-          </Timeline.Item>
-        ))}
-      </Timeline>
+      {experiences.length === 1 ? (
+        <CvEntry {...experiences[0]} />
+      ) : (
+        <Timeline
+          active={experiences.length}
+          color={theme.other.colors.accentColor}
+          lineWidth={2}
+        >
+          {experiences.map((entry, index) => (
+            <Timeline.Item
+              key={index}
+              lineVariant={entry.current ? 'dashed' : 'solid'}
+              bullet={
+                <Paper w="100%" h="100%" radius="50%" bg={theme.other.colors.accentColor}></Paper>
+              }
+            >
+              <CvEntry {...entry} />
+            </Timeline.Item>
+          ))}
+        </Timeline>
+      )}
     </>
   );
 }
