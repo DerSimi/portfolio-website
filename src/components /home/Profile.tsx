@@ -4,6 +4,7 @@ import {
   IconBrandLinkedinFilled,
   IconBrandXFilled,
   IconMailFilled,
+  IconFileFilled,
 } from '@tabler/icons-react';
 import {
   ActionIcon,
@@ -109,6 +110,18 @@ export function Profile() {
               variant="transparent"
             >
               <IconBrandGoogleFilled size={30} color={iconColor} />
+            </ActionIcon>
+          </Tooltip>
+        )}
+        {home.socialLinks.openreview && (
+          <Tooltip label="View me on OpenReview" position="top" withArrow>
+            <ActionIcon
+              component="a"
+              href={home.socialLinks.openreview}
+              size="lg"
+              variant="transparent"
+            >
+              <IconFileFilled size={30} color={iconColor} />
             </ActionIcon>
           </Tooltip>
         )}
