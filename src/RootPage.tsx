@@ -3,14 +3,14 @@ import { Box, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { NavBar } from '@/components /navbar/NavBar';
 import { Home } from '@/pages/Home';
 import { Footer } from './components /footer/Footer';
-import { config as htmlTitle} from './config/html_title';
+import { config as htmlTitle } from './config/html_title';
+import { projects as projectsConfig } from './config/pages/projects';
+import { publications as publicationsConfig } from './config/pages/publications';
 import { navbar } from './config/translation';
 import { CV } from './pages/CV';
 import { Imprint } from './pages/Imprint';
 import { Projects } from './pages/Projects';
 import { Publications } from './pages/Publications';
-import { publications as publicationsConfig } from './config/pages/publications';
-import { projects as projectsConfig } from './config/pages/projects';
 
 const HomeContent = () => <Home />;
 const ProjectsContent = () => <Projects />;
@@ -35,7 +35,22 @@ const navLinks = [
 ];
 
 export function RootPage() {
-  const [activeLink, setActiveLink] = useState('Home');
+  // Here we scan the hash for the right page string and insert it
+  const [activeLink, setActiveLink] = useState(() => {
+    const hash = window.location.hash.slice(1);
+    
+    if (hash) {
+      for (const link of navLinks) {
+        if (link.label.toLowerCase() === hash.toLowerCase()) {
+          window.location.hash = link.label.toLowerCase();
+          return link.label;
+        }
+      }
+    }
+
+    window.location.hash = '';
+    return navbar.home;
+  });
   const [isImprint, setImprint] = useState(false);
   const { colorScheme } = useMantineColorScheme();
   const theme = useMantineTheme();

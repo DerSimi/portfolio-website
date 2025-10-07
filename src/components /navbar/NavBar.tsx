@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useState } from 'react';
+import { WindowSharp } from '@mui/icons-material';
 import { IconMoonFilled, IconSunFilled } from '@tabler/icons-react';
 import {
   ActionIcon,
@@ -56,6 +57,11 @@ export function NavBar({ links, activeLink, setActiveLink, isImprint, setImprint
         onClick={(event) => {
           event.preventDefault();
           setActiveLink(link.label);
+
+          // Set hash only for non-Home links, clear for Home
+          if (link.label === links[0].label) window.location.hash = '';
+          else window.location.hash = link.label.toLowerCase();
+
           setImprint(false);
           closeDrawer();
         }}
