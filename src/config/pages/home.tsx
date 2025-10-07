@@ -12,9 +12,10 @@ export const home = {
   socialLinks: {
     email: 'mailto:simon@rappenecker.me',
     x: '', // No text means disabled
-    linkedin: 'https://www.linkedin.com/in/simon-rappenecker/',
     github: 'https://github.com/DerSimi',
+    linkedin: 'https://www.linkedin.com/in/simon-rappenecker/',
     google: '',
+    openreview: '',
   },
   aboutme: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero velit, non auctor mi porttitor et. Donec non arcu imperdiet, iaculis leo vitae, pellentesque metus. Nullam mollis turpis id dui maximus, vitae venenatis risus euismod. Proin pellentesque aliquam lacinia. Proin fringilla lectus non pretium ultrices. Phasellus varius mollis orci sed gravida. Suspendisse potenti. Proin dictum vitae augue id faucibus. Maecenas placerat, enim eget lobortis feugiat, orci ante dictum orci, eget placerat nisl risus ac urna. Morbi quis malesuada felis.`,
   interests: ['Machine Learning', 'Robotics', 'Computer Vision', 'Mathematics'],
