@@ -19,12 +19,17 @@ export function Projects() {
           <ProjectCard
             key={`project-${idx}`}
             title={project.title}
-            description={project.description}
+            type={project.type}
             imageUrl={project.imageUrl}
-            imageAlt={project.imageAlt}
-            githubUrl={project.githubUrl}
-            links={project.links}
+            description={project.description}
+            code={project.code}
+            liveUrl={project.liveUrl}
             techStack={project.techStack}
+            style={{
+              flex: '1 1 20rem',
+              minWidth: '13.75rem',
+              maxWidth: '26.25rem',
+            }}
           />
         ))}
       </Flex>

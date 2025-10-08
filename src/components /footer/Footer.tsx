@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { IconBrandGithubFilled } from '@tabler/icons-react';
 import { Text, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { imprint as imprintConfig } from '@/config/pages/imprint';
@@ -10,6 +11,8 @@ interface FooterProps {
 }
 
 export function Footer({ isImprint, setImprint }: FooterProps) {
+  const [restoreHash, setHash] = useState('');
+
   const theme = useMantineTheme();
   const { colorScheme } = useMantineColorScheme();
 
@@ -49,6 +52,12 @@ export function Footer({ isImprint, setImprint }: FooterProps) {
             onMouseOut={(e) => (e.currentTarget.style.color = dimmedColor)}
             onClick={(e) => {
               e.preventDefault();
+
+              if (!isImprint) {
+                setHash(window.location.hash);
+                window.location.hash = 'imprint';
+              } else window.location.hash = restoreHash;
+
               setImprint(!isImprint);
             }}
           >

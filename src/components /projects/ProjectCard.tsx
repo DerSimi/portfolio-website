@@ -1,6 +1,6 @@
-import { IconBrandGithubFilled } from '@tabler/icons-react';
+import { useState } from 'react';
+import { IconBracketsAngle, IconEye } from '@tabler/icons-react';
 import {
-  ActionIcon,
   Badge,
   Box,
   Button,
@@ -9,45 +9,59 @@ import {
   Image,
   Stack,
   Text,
-  Title,
-  Tooltip,
   useMantineColorScheme,
   useMantineTheme,
 } from '@mantine/core';
 import { PersonalCard } from '../PersonalCard';
 
 export function ProjectCard({
-  imageUrl,
-  imageAlt,
   title,
+  type,
+  imageUrl,
   description,
-  githubUrl,
-  links,
+  code,
+  liveUrl,
   techStack,
+  style,
 }: {
-  imageUrl?: string;
-  imageAlt?: string;
   title?: string;
+  type?: string;
+  imageUrl?: string;
   description?: string;
-  githubUrl?: string;
-  links?: { href: string; label: string }[];
+  code?: string;
+  liveUrl?: string;
   techStack?: string[];
+  style?: React.CSSProperties;
 }) {
   const theme = useMantineTheme();
   const { colorScheme } = useMantineColorScheme();
+  const [codeHovered, setCodeHovered] = useState(false);
 
-  const dimmedColor = colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6];
-  const headerBorder = colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3];
-
-  const imageHeight = 200;
+  const imageHeight = 185;
 
   return (
-    <PersonalCard style={{ width: 320, height: 500 }}>
-      <Card.Section style={{ borderBottom: `1px solid ${headerBorder}` }}>
+    <PersonalCard style={{ height: 500, ...(style ?? {}) }}>
+      <Card.Section>
+        {/* Top badge naming project type */}
+        {type && (
+          <Badge
+            color={theme.other.colors.accentColor}
+            variant="filled"
+            size="lg"
+            style={{
+              position: 'absolute',
+              top: '1rem',
+              left: '1.25rem',
+              zIndex: 1,
+              textTransform: 'none',
+            }}
+          >
+            {type ? type : ''}
+          </Badge>
+        )}
         {imageUrl ? (
           <Image
             src={imageUrl}
-            alt={imageAlt}
             fit="cover"
             style={{ width: '100%', height: imageHeight, objectFit: 'cover' }}
           />
@@ -60,54 +74,82 @@ export function ProjectCard({
               justifyContent: 'center',
               textAlign: 'center',
             }}
-          >
-            <Title fz="h1" c={theme.other.colors.accentColor}>
-              {imageAlt}
-            </Title>
-          </Box>
+          ></Box>
         )}
       </Card.Section>
 
-      <Stack gap="sm" style={{ flex: 1, minHeight: 0 }} mt="md">
-        <Title fz="h2" style={{ wordBreak: 'break-word' }}>
-          {title}
-        </Title>
-        {!!techStack?.length && (
-          <Group gap="xs" wrap="wrap" style={{ overflow: 'hidden' }}>
-            {techStack.map((tech) => (
-              <Badge key={tech} color={theme.other.colors.accentColor} variant="light">
-                {tech}
-              </Badge>
-            ))}
-          </Group>
-        )}
+      <Stack gap="sm" mt="md" style={{ height: '100%', justifyContent: 'space-between' }}>
+        <Stack gap="sm">
+          {/* Headline and Tech Stack */}
+          <Stack gap={0}>
+            <Text fw={700} size="xl" style={{ wordBreak: 'break-word', marginBottom: 2 }}>
+              {title}
+            </Text>
+            {!!techStack?.length && (
+              <Group gap="xs" wrap="wrap" style={{ overflow: 'hidden' }}>
+                {techStack.map((tech) => (
+                  <Badge key={tech} color={theme.other.colors.accentColor} variant="light">
+                    {tech}
+                  </Badge>
+                ))}
+              </Group>
+            )}
+          </Stack>
 
-        <Text size="h3" style={{ wordBreak: 'break-word' }}>
-          {description}
-        </Text>
-        <Box style={{ flex: 1 }} />
+          {/* Description */}
+          <Text size="md" style={{ wordBreak: 'break-word' }}>
+            {description}
+          </Text>
+        </Stack>
+
+        {/* Buttons at the end */}
+        <Group justify="space-between" style={{ width: '100%', marginTop: 'md' }}>
+          {liveUrl ? (
+            <Button
+              leftSection={<IconEye size={18} stroke={2} />}
+              radius="md"
+              component="a"
+              href={liveUrl}
+              target="_blank"
+              color={theme.other.colors.accentColor}
+              rel="noopener noreferrer"
+            >
+              Live
+            </Button>
+          ) : (
+            <span />
+          )}
+
+          {code ? (
+            <Button
+              leftSection={<IconBracketsAngle size={18} stroke={2} />}
+              variant="default"
+              radius="md"
+              component="a"
+              href={code}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                backgroundColor:
+                  colorScheme === 'dark'
+                    ? codeHovered
+                      ? '#4a5568'
+                      : theme.other.colors.dark.boxBg
+                    : codeHovered
+                      ? '#f8f9fa'
+                      : 'white',
+                borderColor: colorScheme === 'dark' ? '#4a5568' : '#d1d5db',
+              }}
+              onMouseEnter={() => setCodeHovered(true)}
+              onMouseLeave={() => setCodeHovered(false)}
+            >
+              Code
+            </Button>
+          ) : (
+            <span />
+          )}
+        </Group>
       </Stack>
-
-      <Group mt="md">
-        {githubUrl && (
-          <Tooltip label="View on GitHub" position="top" withArrow>
-            <ActionIcon component="a" href={githubUrl} size="lg" variant="transparent">
-              <IconBrandGithubFilled size={30} color={dimmedColor} />
-            </ActionIcon>
-          </Tooltip>
-        )}
-        {links?.map((link) => (
-          <Button
-            key={`${link.href}-${link.label}`}
-            component="a"
-            href={link.href}
-            color={theme.other.colors.accentColor}
-            radius="md"
-          >
-            {link.label}
-          </Button>
-        ))}
-      </Group>
     </PersonalCard>
   );
 }

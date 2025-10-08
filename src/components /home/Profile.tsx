@@ -46,7 +46,7 @@ export function Profile() {
       <Text ta="center" fz={30} fw="bolder" mt="md" lh={1.1}>
         {home.name}
       </Text>
-      <Text ta="center" size="md" fw="bold" mt="lg" c="dimmed">
+      <Text ta="center" size="md" fw="bold" mt="xs" c="dimmed">
         {home.title}
       </Text>
 

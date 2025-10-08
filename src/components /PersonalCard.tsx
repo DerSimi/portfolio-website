@@ -15,7 +15,7 @@ export function PersonalCard({ children, style, ...rest }: PersonalCardProps) {
     <Card
       shadow="sm"
       padding="xl"
-      radius="md"
+      radius="lg"
       style={{
         background: bg,
         display: 'flex',
@@ -23,7 +23,12 @@ export function PersonalCard({ children, style, ...rest }: PersonalCardProps) {
         transition: 'box-shadow 0.2s',
         ...(style ?? {}),
       }}
-      onMouseEnter={(e) => (e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.18)')}
+      onMouseEnter={(e) =>
+        (e.currentTarget.style.boxShadow =
+          colorScheme === 'dark'
+            ? '0 0 16px rgba(255, 255, 255, 0.18)'
+            : '0 0 16px rgba(0, 0, 0, 0.18)')
+      }
       onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '')}
       {...rest}
     >

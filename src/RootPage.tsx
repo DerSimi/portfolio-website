@@ -35,23 +35,9 @@ const navLinks = [
 ];
 
 export function RootPage() {
-  // Here we scan the hash for the right page string and insert it
-  const [activeLink, setActiveLink] = useState(() => {
-    const hash = window.location.hash.slice(1);
-    
-    if (hash) {
-      for (const link of navLinks) {
-        if (link.label.toLowerCase() === hash.toLowerCase()) {
-          window.location.hash = link.label.toLowerCase();
-          return link.label;
-        }
-      }
-    }
-
-    window.location.hash = '';
-    return navbar.home;
-  });
   const [isImprint, setImprint] = useState(false);
+  // Here we scan the hash for the right page string and insert it
+  const [activeLink, setActiveLink] = useState(navbar.home);
   const { colorScheme } = useMantineColorScheme();
   const theme = useMantineTheme();
 
@@ -67,6 +53,36 @@ export function RootPage() {
     }
 
     link.href = htmlTitle.icon;
+  }, []);
+
+  // This enables a better navigation via hash
+  useEffect(() => {
+    function handleHashChange() {
+      const hash = window.location.hash.slice(1).toLowerCase();
+
+      if (hash === 'imprint') {
+        window.location.hash = 'imprint';
+        setImprint(true);
+        return;
+      } else setImprint(false);
+
+      const found = navLinks.find((link) => link.label.toLowerCase() === hash);
+      if (found) {
+        window.location.hash = found.label.toLowerCase();
+
+        if (found.label === navbar.home) window.location.hash = '';
+
+        setActiveLink(found.label);
+      } else {
+        window.location.hash = '';
+        setActiveLink(navbar.home);
+      }
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange();
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   return (
