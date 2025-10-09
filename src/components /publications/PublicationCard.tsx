@@ -1,5 +1,5 @@
 import { Anchor, Box, Group, Image, Paper, Stack, Text, useMantineTheme } from '@mantine/core';
-import { PersonalCard } from '../PersonalCard';
+import { PersonalCard } from '../common/PersonalCard';
 
 type PublicationLink = { href: string; label: string };
 

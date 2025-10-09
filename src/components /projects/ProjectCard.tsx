@@ -12,7 +12,8 @@ import {
   useMantineColorScheme,
   useMantineTheme,
 } from '@mantine/core';
-import { PersonalCard } from '../PersonalCard';
+import { PersonalCard } from '../common/PersonalCard';
+import { RenderDescription } from '../common/TextHelper';
 
 export function ProjectCard({
   title,
@@ -24,10 +25,10 @@ export function ProjectCard({
   techStack,
   style,
 }: {
-  title?: string;
+  title: string;
   type?: string;
-  imageUrl?: string;
-  description?: string;
+  imageUrl: string;
+  description: string;
   code?: string;
   liveUrl?: string;
   techStack?: string[];
@@ -97,9 +98,7 @@ export function ProjectCard({
           </Stack>
 
           {/* Description */}
-          <Text size="md" style={{ wordBreak: 'break-word' }}>
-            {description}
-          </Text>
+          {RenderDescription(description, { size: "md", style: { wordBreak: 'break-word' } })}
         </Stack>
 
         {/* Buttons at the end */}

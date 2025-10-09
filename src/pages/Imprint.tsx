@@ -1,7 +1,7 @@
 import { Box, Stack, Title } from '@mantine/core';
 import { ContactView } from '@/components /imprint/ContactView';
 import { InformationView } from '@/components /imprint/InformationView';
-import { PersonalCard } from '@/components /PersonalCard';
+import { PersonalCard } from '@/components /common/PersonalCard';
 import { imprint as imprintTranslation } from '@/config/translation';
 
 export function Imprint() {

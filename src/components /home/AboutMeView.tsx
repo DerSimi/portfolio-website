@@ -1,6 +1,7 @@
 import { Text, Title } from '@mantine/core';
 import { home as homeConfig } from '@/config/pages/home';
 import { home as homeTranslation } from '@/config/translation';
+import { RenderDescription } from '../common/TextHelper';
 
 export function AboutMeView() {
   return (
@@ -8,14 +9,11 @@ export function AboutMeView() {
       <Title fz="h1" mb="md">
         {homeTranslation.about_me}
       </Title>
-      <Text fz="md" mb="md" style={{ maxWidth: '64rem', width: '100%' }}>
-        {homeConfig.aboutme.split('\n').map((line, idx, arr) => (
-          <span key={idx}>
-            {line}
-            {idx < arr.length - 1 && <br />}
-          </span>
-        ))}
-      </Text>
+      {RenderDescription(homeConfig.aboutme, {
+        fz: 'md',
+        mb: 'md',
+        style: { maxWidth: '64rem', width: '100%' },
+      })}
     </>
   );
 }

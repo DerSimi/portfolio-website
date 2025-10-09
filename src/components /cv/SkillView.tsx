@@ -11,7 +11,7 @@ import {
 } from '@mantine/core';
 import { cv as cvConfig } from '@/config/pages/cv';
 import { cv as cvTranslation } from '@/config/translation';
-import { PersonalCard } from '../PersonalCard';
+import { PersonalCard } from '../common/PersonalCard';
 
 export function SkillView() {
   const theme = useMantineTheme();
