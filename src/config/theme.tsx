@@ -19,9 +19,9 @@ export const theme = createTheme({
       // Dark Mode
       dark: {
         // Color of the content space
-        contentBg: '#1A202C',
+        contentBg: '#121212',
         // Color of boxes (Navbar, Cards)
-        boxBg: '#2D3748',
+        boxBg: '#1e1e1e',
       },
     },
   },
