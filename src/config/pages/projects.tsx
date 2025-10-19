@@ -4,16 +4,6 @@ export const projects = {
   topDescription: 'Here are some of the projects I have worked on.', // Keep this empty to disable
   projects: [
     {
-      title: 'Portfolio Website',
-      type: 'Web',
-      imageUrl: '/assets/projects/portfolio.png',
-      description:
-        'A simple portfolio site showcasing projects, publications, CV, and contact information.',
-      code: 'https://github.com/DerSimi/portfolio-website',
-      liveUrl: 'https://rappenecker.me/demo/',
-      techStack: ['React', 'TypeScript', 'CSS'],
-    },
-    {
       title: 'Sim2Real Transfer',
       type: 'Robotics',
       imageUrl: '/assets/projects/sim2real.png',
@@ -41,6 +31,16 @@ export const projects = {
       code: 'https://github.com/DerSimi/parameter-estimation',
       liveUrl: '',
       techStack: ['JAX', 'MuJoCo', 'Python'],
+    },
+    {
+      title: 'Portfolio Website',
+      type: 'Web',
+      imageUrl: '/assets/projects/portfolio.png',
+      description:
+        'A simple portfolio site showcasing projects, publications, CV, and contact information.',
+      code: 'https://github.com/DerSimi/portfolio-website',
+      liveUrl: 'https://rappenecker.me/demo/',
+      techStack: ['React', 'TypeScript', 'CSS'],
     },
     {
       title: 'Mission Explorer',
