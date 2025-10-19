@@ -4,34 +4,44 @@ export const projects = {
   topDescription: 'Here are some of the projects I have worked on.', // Keep this empty to disable
   projects: [
     {
-      title: 'Portfolio Site',
+      title: 'Portfolio Website',
       type: 'Web',
-      imageUrl: 'https://picsum.photos/id/29/400/',
+      imageUrl: '/assets/projects/portfolio.png',
       description:
-        'A simple portfolio site showcasing projects, about and contact information. Built as a single-page app with responsive design.',
-      code: 'https://github.com/example/portfolio-site',
-      liveUrl: 'https://example.com/portfolio',
+        'A simple portfolio site showcasing projects, publications, CV, and contact information.',
+      code: 'https://github.com/DerSimi/portfolio-website',
+      liveUrl: 'https://rappenecker.me/demo/',
       techStack: ['React', 'TypeScript', 'CSS'],
     },
     {
-      title: 'Task Manager App',
-      type: 'Windows',
-      imageUrl: 'https://picsum.photos/id/89/400/',
+      title: 'Sim2Real Transfer',
+      type: 'Robotics',
+      imageUrl: '/assets/projects/sim2real.png',
       description:
-        'A todo/task manager with user authentication, real-time updates, and drag-and-drop task organization.',
-      code: 'https://github.com/example/task-manager',
-      liveUrl: '', // Empty to disable
-      techStack: ['React', 'Redux', 'Node.js', 'MongoDB'],
+        `Sim2Real pipeline to transfer policies to the Go2, allowing a seamless switch between simulation and the real world.`,
+      code: 'https://github.com/DerSimi/unitree_go2_sim2real',
+      liveUrl: '',
+      techStack: ['ROS2', 'JAX', 'Brax', 'MuJoCo'],
     },
     {
-      title: 'Weather Dashboard',
-      type: 'Stuff',
-      imageUrl: 'https://picsum.photos/id/40/400/',
+      title: 'Robot Recording',
+      type: 'Robotics',
+      imageUrl: '/assets/projects/data_recording.png',
       description:
-        'A dashboard displaying current weather and forecast data from a public API with charts and location search.',
-      code: 'https://github.com/example/weather-dashboard',
-      liveUrl: 'https://example.com/weather-dashboard',
-      techStack: ['Vue', 'TypeScript', 'Chart.js', 'REST API'],
+        'A tool for instantly visualizing Go2 data and exporting it to a Python-readable format.',
+      code: 'https://github.com/DerSimi/unitree_go2_to_mujoco',
+      liveUrl: '',
+      techStack: ['ROS2', 'MuJoCo', 'C++'],
+    },
+        {
+      title: 'Mission Explorer',
+      type: 'Web',
+      imageUrl: '/assets/projects/mission_explorer.png',
+      description:
+        'A tool for visualizing robot missions. Created as part of an university project in cooperation with the Max Planck Institute for Intelligent Systems.',
+      code: 'https://github.com/DerSimi/mission_db',
+      liveUrl: '',
+      techStack: ['React', 'Python', 'ROS2'],
     },
   ],
 };

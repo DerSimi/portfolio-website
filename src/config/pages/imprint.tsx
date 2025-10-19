@@ -4,12 +4,12 @@ export const imprint = {
   enableImprint: true,
   // Information part
   informationTitle: 'In compliance to § 5 TMG',
-  information: `Your Name
-  Example Street 123
-  12345 Example City
+  information: `Simon Rappenecker
+  Konrad-Adenauer-Straße 21
+  72072 Tübingen
   Germany`,
   // Contact part
   // In Germany you need two ways of contact
-  email: 'yourname@example.com',
+  email: 'simon@rappenecker.me',
   phone: 'On request',
 };

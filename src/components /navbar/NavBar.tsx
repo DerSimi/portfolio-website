@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction, useState } from 'react';
-import { WindowSharp } from '@mui/icons-material';
 import { IconMoonFilled, IconSunFilled } from '@tabler/icons-react';
 import {
   ActionIcon,
