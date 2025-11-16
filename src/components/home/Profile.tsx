@@ -34,7 +34,7 @@ export function Profile() {
         src={home.imageLink && home.imageLink !== '' ? home.imageLink : null}
         alt="User avatar"
         color={theme.other.colors.accentColor}
-        size={160}
+        size={250}
         radius={10}
         mx="auto"
         style={{ borderRadius: '50%', boxShadow: '0 17px 30px rgba(0, 0, 0, 0.1)' }}
