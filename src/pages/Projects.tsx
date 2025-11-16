@@ -1,5 +1,5 @@
 import { Flex, Text, Title, Box } from '@mantine/core';
-import { ProjectCard } from '@/components /projects/ProjectCard';
+import { ProjectCard } from '@/components/projects/ProjectCard';
 import { projects as projectsConfig } from '@/config/pages/projects';
 import { projects as projectsTranslation } from '@/config/translation';
 

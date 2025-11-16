@@ -1,9 +1,9 @@
 import { Grid } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import { AboutMeView } from '@/components /home/AboutMeView';
-import { EducationView } from '@/components /home/EducationView';
-import { Interests } from '@/components /home/Interests';
-import { Profile } from '@/components /home/Profile';
+import { AboutMeView } from '@/components/home/AboutMeView';
+import { EducationView } from '@/components/home/EducationView';
+import { Interests } from '@/components/home/Interests';
+import { Profile } from '@/components/home/Profile';
 
 export function Home() {
   const isSmUp = useMediaQuery('(min-width: 48em)'); // Mantine sm = 48em
