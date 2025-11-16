@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import { Card, useMantineColorScheme, useMantineTheme } from '@mantine/core';
-import type { CardProps } from '@mantine/core'; // Importiere CardProps für Typsicherheit
+import type { CardProps } from '@mantine/core';
 
 type PersonalCardProps = PropsWithChildren<CardProps>;
 

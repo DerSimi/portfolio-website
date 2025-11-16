@@ -1,6 +1,6 @@
 import SchoolIcon from '@mui/icons-material/School';
 import { Group, Stack, Title, useMantineTheme } from '@mantine/core';
-import { CvEntry } from '@/components /cv/CvHelper';
+import { CvEntry } from '@/components/cv/CvHelper';
 import { cv as cvConfig } from '@/config/pages/cv';
 import { cv as cvTranslation } from '@/config/translation';
 

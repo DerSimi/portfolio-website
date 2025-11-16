@@ -1,5 +1,5 @@
 import { Stack, Text, Title } from '@mantine/core';
-import { PublicationCard } from '@/components /publications/PublicationCard';
+import { PublicationCard } from '@/components/publications/PublicationCard';
 import { publications as publicationsConfig } from '@/config/pages/publications';
 import { publications as publicationsTranslation } from '@/config/translation';
 

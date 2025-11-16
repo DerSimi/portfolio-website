@@ -1,8 +1,8 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { Box, useMantineColorScheme, useMantineTheme } from '@mantine/core';
-import { NavBar } from '@/components /navbar/NavBar';
+import { NavBar } from '@/components/navbar/NavBar';
 import { Home } from '@/pages/Home';
-import { Footer } from './components /footer/Footer';
+import { Footer } from './components/footer/Footer';
 import { config as htmlTitle } from './config/html_title';
 import { projects as projectsConfig } from './config/pages/projects';
 import { publications as publicationsConfig } from './config/pages/publications';

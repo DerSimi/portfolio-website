@@ -1,7 +1,7 @@
 import { Box, Grid, Text, Title } from '@mantine/core';
-import { EducationView } from '@/components /cv/EducationView';
-import { ExperienceView } from '@/components /cv/ExperienceView';
-import { SkillView } from '@/components /cv/SkillView';
+import { EducationView } from '@/components/cv/EducationView';
+import { ExperienceView } from '@/components/cv/ExperienceView';
+import { SkillView } from '@/components/cv/SkillView';
 import { cv as cvTranslation } from '@/config/translation';
 import {cv as cvConfig} from '@/config/pages/cv';
 
